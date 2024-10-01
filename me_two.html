@@ -37,11 +37,12 @@
         /* Paragraph (body text) styling */
         p {
             font-family: 'Arial Black', sans-serif;
-            font-size: 0.875em; /* Smaller text size */
+            font-size: 0.875em; /* Smaller standard text size */
             text-shadow: 1px 1px #000;
             line-height: 1.8;
         }
 
+        /* Unordered list styling */
         ul {
             border: 2px solid #ccc;
             width: 50%;
@@ -54,12 +55,14 @@
             padding: 5px 0;
         }
 
+        /* Flexbox for favorite food image and text */
         .food-container {
             display: flex;
             align-items: center;
             margin-top: 20px;
         }
 
+        /* Updated food image */
         .food-image {
             background-image: url('images/img-bibimbap.jpg');
             width: 100%;
@@ -76,14 +79,7 @@
             color: #fff;
         }
 
-        table tr:nth-child(even) {
-            background-color: #8f6b9f;
-        }
-
-        table tr:nth-child(odd) {
-            background-color: #b08dc6;
-        }
-
+        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -93,18 +89,29 @@
         table, th, td {
             border: 1px solid #fff;
             padding: 10px;
-            color: #008000;
+            color: #008000; /* Green text for table content */
             font-style: italic;
         }
 
+        /* Different font sizes for table headings and cells */
         th {
-            font-size: 1.8em;
+            font-size: 1.8em; /* Larger font size for the header */
         }
 
         td {
-            font-size: 1.2em;
+            font-size: 1.2em; /* Slightly smaller font size for table data */
         }
 
+        /* Alternating row color in the table */
+        table tr:nth-child(even) {
+            background-color: #8f6b9f; /* Slightly darker purple */
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #b08dc6; /* Lighter pastel purple */
+        }
+
+        /* Form table styling */
         form table {
             width: 100%;
         }
@@ -120,6 +127,7 @@
             padding: 10px;
         }
 
+        /* Social media icons styling */
         .social-icons {
             position: fixed;
             top: 100px;
@@ -135,10 +143,15 @@
 </head>
 <body>
 
+    <!-- Main title of the page -->
     <h1>Qian Zhu</h1>
 
-    <p>Last summer, my family embarked on a road trip from Boston to San Diego...</p>
+    <!-- Paragraph about a trip -->
+    <p>Last summer, my family embarked on a road trip from Boston to San Diego. Initially, we planned to spend a week at Yellowstone National Park, but because of our dog, we chose to drive there instead of flying. Along the way, my daughter expressed interest in visiting the San Diego Zoo, which led us to extend our trip.</p>
 
+    <p>During our journey, we explored many breathtaking locations such as Yosemite, Antelope Canyon, Death Valley, Zion, and Bryce National Parks. The entire trip took a month to complete, and it was an unforgettable adventure.</p>
+
+    <!-- Favorite pets section -->
     <h2>My Favorite Pets</h2>
     <ul>
         <li>A dog named Jagger</li>
@@ -146,13 +159,16 @@
         <li>A cat named Oscar</li>
     </ul>
 
-    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel" target="_blank">El Tovar Dining Room</a>...</p>
+    <!-- Favorite restaurant -->
+    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel/?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6SzcrSQuWL0UgOHJ_Rzqjuf7UE8IfdPcPvl9jKhrntgyN2OtBnLMTDgaArDXEALw_wcB" target="_blank">El Tovar Dining Room</a>, nestled in the historic El Tovar Hotel at Grand Canyon National Park. With breathtaking views of the South Rim, the restaurant offers a unique taste of the region, featuring dishes like roasted poblano pepper soup and Colorado rack of lamb.</p>
 
+    <!-- Favorite food section -->
     <div class="food-container">
         <div class="food-image"></div>
-        <div class="food-text">My favorite food is a Korean dish called Bibimbap...</div>
+        <div class="food-text">My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!</div>
     </div>
 
+    <!-- Favorite books section -->
     <h2>My Favorite Books</h2>
     <table>
         <tr>
@@ -161,8 +177,60 @@
             <th>Author</th>
             <th>Summary</th>
         </tr>
-        <!-- Book list goes here -->
+        <tr>
+            <td>Circe</td>
+            <td><img src="images/Circe by Madeline Miller.jpg" alt="Circe" width="100"></td>
+            <td>Madeline Miller</td>
+            <td>A powerful retelling of the mythological character Circe, with themes of transformation and self-discovery.</td>
+        </tr>
+        <tr>
+            <td>The Midnight Library</td>
+            <td><img src="images/The Midnight Library by Matt Haig.jpg" alt="The Midnight Library" width="100"></td>
+            <td>Matt Haig</td>
+            <td>A novel about the choices we make, with a unique twist on how we live alternate lives through different decisions.</td>
+        </tr>
+        <tr>
+            <td>Project Hail Mary</td>
+            <td><img src="images/Project Hail Mary by Andy Weir.jpg" alt="Project Hail Mary" width="100"></td>
+            <td>Andy Weir</td>
+            <td>A gripping sci-fi adventure where one man's survival holds the key to humanity's future.</td>
+        </tr>
+        <tr>
+            <td>Klara and the Sun</td>
+            <td><img src="images/Klara and the Sun by Kazuo Ishiguro.jpg" alt="Klara and the Sun" width="100"></td>
+            <td>Kazuo Ishiguro</td>
+            <td>A thought-provoking novel about an artificial friend observing human life and yearning for connection.</td>
+        </tr>
     </table>
+
+    <!-- User input form -->
+    <h2>User Input Form</h2>
+    <form action="/submit" method="post">
+        <table>
+            <tr>
+                <td><label for="first-name">First Name:</label></td>
+                <td><input type="text" id="first-name" name="first-name"></td>
+            </tr>
+            <tr>
+                <td><label for="last-name">Last Name:</label></td>
+                <td><input type="text" id="last-name" name="last-name"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="city" name="city"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td>
+                    <select id="state" name="state">
+                        <option value="NY">New York</option>
+                        <option value="CA">California</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
 
     <!-- Social media icons -->
     <div class="social-icons">
