@@ -4,49 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Qian Zhu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arial+Black&display=swap" rel="stylesheet">
+    
+    <!-- Google Font (Roboto as Sans Serif Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        /* Body font */
+        /* Apply Google Font (Sans Serif) */
         body {
-            font-family: 'Arial Black', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #9b79b3;
             color: #fff;
             margin: 0;
             padding: 20px;
         }
 
-        /* H1 (Main Title) styling */
-        h1 {
-            color: #f1e3ff;
-            font-size: 2em; /* Common title size */
-            margin-bottom: 30px;
-            font-family: 'Arial Black', sans-serif;
-            text-shadow: 2px 2px #333;
+        /* H1 and H2 Styling: Set Color, Size, and 30px Margin Below */
+        h1, h2 {
+            color: #333; /* Example color */
+            font-size: 2.5em; /* Adjust size as needed */
+            margin-bottom: 30px; /* Adds margin of 30px below */
         }
 
-        /* H2 (Subheading) styling */
-        h2 {
-            color: #f1e3ff;
-            font-size: 1.5em; /* Common subheading size */
-            margin-bottom: 20px;
-            font-family: 'Arial Black', sans-serif;
-            text-shadow: 2px 2px #333;
-        }
-
-        /* Paragraph (body text) styling */
-        p {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1em; /* Consistent font size for all paragraphs */
-            text-shadow: 1px 1px #000;
-            line-height: 1.8;
-        }
-
-        /* Unordered list styling */
+        /* Unordered List Styling: Border and Centering (Without Centering Items) */
         ul {
             border: 2px solid #ccc;
             width: 50%;
-            margin: 0 auto;
+            margin: 0 auto; /* Centers the list on the page */
             padding: 10px;
             list-style-type: none;
         }
@@ -64,22 +50,22 @@
         }
 
         .food-image {
-            background-image: url('images/img-bibimbap.jpg');
-            width: 70%; /* Set the image to take 50% of the container width */
-            height: 350px; /* Set height to match image aspect ratio */
+            background-image: url('images/img-bibimbap.jpg'); /* Replace with correct image path */
+            width: 50%; /* Set the image to take 50% of the container width */
+            height: 400px; /* Adjust size for landscape */
             background-size: cover;
             background-position: center;
             margin-right: 20px;
         }
 
         .food-text {
-            font-size: 1.5em;
+            font-size: 1em; /* Adjusted to smaller text size */
             color: #fff;
             width: 50%; /* Text takes up the remaining 50% */
             text-align: justify; /* Ensure text aligns well */
         }
 
-        /* Table styling */
+        /* Table styling with alternating row background colors */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -110,14 +96,30 @@
             background-color: #b08dc6; /* Lighter pastel purple */
         }
 
-        /* Social media icons styling */
+        /* Form Styling: Labels in Separate Column, Right-Aligned */
+        form table {
+            width: 100%;
+        }
+
+        form label {
+            display: block;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        form td {
+            padding: 10px;
+        }
+
+        /* Social media icons fixed positioning */
         .social-icons {
-            text-align: center;
-            margin-top: 50px;
+            position: fixed;
+            top: 100px;
+            right: 35px;
         }
 
         .social-icons a {
-            margin: 0 15px; /* Adds space between the icons */
+            margin: 0 10px;
             font-size: 24px;
             color: #fff;
         }
@@ -125,6 +127,7 @@
 </head>
 <body>
 
+    <!-- Main title of the page -->
     <h1>Qian Zhu</h1>
 
     <!-- Paragraphs with consistent font size -->
@@ -142,7 +145,7 @@
         </div>
     </div>
 
-    <!-- Favorite pets section -->
+    <!-- Favorite pets section with border and centered list -->
     <h2>My Favorite Pets</h2>
     <ul>
         <li>A dog named Jagger</li>
@@ -150,7 +153,7 @@
         <li>A cat named Oscar</li>
     </ul>
 
-    <!-- Favorite books section -->
+    <!-- Favorite books section with alternating row colors -->
     <h2>My Favorite Books</h2>
     <table>
         <tr>
@@ -185,7 +188,36 @@
         </tr>
     </table>
 
-    <!-- Social media icons -->
+    <!-- User information form with right-aligned labels -->
+    <h2>User Information Form</h2>
+    <form action="/submit" method="post">
+        <table>
+            <tr>
+                <td><label for="first-name">First Name:</label></td>
+                <td><input type="text" id="first-name" name="first-name"></td>
+            </tr>
+            <tr>
+                <td><label for="last-name">Last Name:</label></td>
+                <td><input type="text" id="last-name" name="last-name"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="city" name="city"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td>
+                    <select id="state" name="state">
+                        <option value="NY">New York</option>
+                        <option value="CA">California</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Social media icons in fixed position -->
     <div class="social-icons">
         <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
