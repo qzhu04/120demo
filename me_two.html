@@ -4,36 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Qian Zhu</title>
-    <!-- Add Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css2?family=Arial+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Body font */
         body {
             font-family: 'Arial Black', sans-serif;
-            background-color: #9b79b3; /* Pastel dark purple */
-            color: #fff; /* Light text color for contrast */
+            background-color: #9b79b3;
+            color: #fff;
             margin: 0;
             padding: 20px;
         }
 
-        /* H1 and H2 styling */
-        h1, h2 {
-            color: #f1e3ff; /* Light color for the headers */
-            font-size: 2.5em;
+        /* H1 (Main Title) styling */
+        h1 {
+            color: #f1e3ff;
+            font-size: 2em; /* Common title size */
             margin-bottom: 30px;
             font-family: 'Arial Black', sans-serif;
             text-shadow: 2px 2px #333;
         }
 
-        /* Artistic font for paragraphs */
+        /* H2 (Subheading) styling */
+        h2 {
+            color: #f1e3ff;
+            font-size: 1.5em; /* Common subheading size */
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+            text-shadow: 2px 2px #333;
+        }
+
+        /* Paragraph (body text) styling */
         p {
             font-family: 'Arial Black', sans-serif;
-            font-size: 1.5em;
+            font-size: 0.875em; /* Smaller text size */
             text-shadow: 1px 1px #000;
             line-height: 1.8;
         }
 
-        /* Centered list with border */
         ul {
             border: 2px solid #ccc;
             width: 50%;
@@ -46,41 +54,36 @@
             padding: 5px 0;
         }
 
-        /* Flexbox for favorite food image and text */
         .food-container {
             display: flex;
             align-items: center;
             margin-top: 20px;
         }
 
-        /* Background image for the food */
         .food-image {
-            background-image: url('images/img-bibimbap.jpg'); /* Path to your image */
-            width: 100%; /* Make it responsive */
-            max-width: 600px; /* Limit the max width for the landscape size */
-            height: auto; /* Allow the height to adjust based on the image’s aspect ratio */
-            background-size: contain; /* Make sure the image fits inside the container */
-            background-repeat: no-repeat; /* Prevent repetition of the image */
-            background-position: center; /* Center the image */
+            background-image: url('images/img-bibimbap.jpg');
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             margin-right: 20px;
         }
 
-        /* Spacing for the food text */
         .food-text {
             font-size: 1.5em;
             color: #fff;
         }
 
-        /* Alternating row color in the table */
         table tr:nth-child(even) {
-            background-color: #8f6b9f; /* Slightly darker purple */
+            background-color: #8f6b9f;
         }
 
         table tr:nth-child(odd) {
-            background-color: #b08dc6; /* Lighter pastel purple */
+            background-color: #b08dc6;
         }
 
-        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -90,20 +93,18 @@
         table, th, td {
             border: 1px solid #fff;
             padding: 10px;
-            color: #008000; /* Set all text to green */
-            font-style: italic; /* Italicize the text */
+            color: #008000;
+            font-style: italic;
         }
 
-        /* Different font sizes for table headings and cells */
         th {
-            font-size: 1.8em; /* Larger font size for the header */
+            font-size: 1.8em;
         }
 
         td {
-            font-size: 1.2em; /* Slightly smaller font size for table data */
+            font-size: 1.2em;
         }
 
-        /* Form table styling */
         form table {
             width: 100%;
         }
@@ -119,7 +120,6 @@
             padding: 10px;
         }
 
-        /* Social media icons styling */
         .social-icons {
             position: fixed;
             top: 100px;
@@ -135,15 +135,10 @@
 </head>
 <body>
 
-    <!-- Your name -->
     <h1>Qian Zhu</h1>
 
-    <!-- A few sentences about a trip -->
-    <p>Last summer, my family embarked on a road trip from Boston to San Diego. Initially, we planned to spend a week at Yellowstone National Park, but because of our dog, we chose to drive there instead of flying. Along the way, my daughter expressed interest in visiting the San Diego Zoo, which led us to extend our trip.</p>
+    <p>Last summer, my family embarked on a road trip from Boston to San Diego...</p>
 
-    <p>During our journey, we explored many breathtaking locations such as Yosemite, Antelope Canyon, Death Valley, Zion, and Bryce National Parks. The entire trip took a month to complete, and it was an unforgettable adventure.</p>
-
-    <!-- A bulleted list of favorite pets -->
     <h2>My Favorite Pets</h2>
     <ul>
         <li>A dog named Jagger</li>
@@ -151,18 +146,13 @@
         <li>A cat named Oscar</li>
     </ul>
 
-    <!-- Favorite restaurant with a link that opens in a new tab -->
-    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel/?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6SzcrSQuWL0UgOHJ_Rzqjuf7UE8IfdPcPvl9jKhrntgyN2OtBnLMTDgaArDXEALw_wcB" target="_blank">El Tovar Dining Room</a>, nestled in the historic El Tovar Hotel at Grand Canyon National Park. With breathtaking views of the South Rim, the restaurant offers a unique taste of the region, featuring dishes like roasted poblano pepper soup and Colorado rack of lamb.</p>
+    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel" target="_blank">El Tovar Dining Room</a>...</p>
 
-    <!-- Favorite food image and description -->
     <div class="food-container">
         <div class="food-image"></div>
-        <div class="food-text">My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!</div>
+        <div class="food-text">My favorite food is a Korean dish called Bibimbap...</div>
     </div>
 
-    <br clear="all">
-
-    <!-- Table of favorite books -->
     <h2>My Favorite Books</h2>
     <table>
         <tr>
@@ -171,60 +161,8 @@
             <th>Author</th>
             <th>Summary</th>
         </tr>
-        <tr>
-            <td>Circe</td>
-            <td><img src="images/Circe by Madeline Miller.jpg" alt="Circe" width="100"></td>
-            <td>Madeline Miller</td>
-            <td>A powerful retelling of the mythological character Circe, with themes of transformation and self-discovery.</td>
-        </tr>
-        <tr>
-            <td>The Midnight Library</td>
-            <td><img src="images/The Midnight Library by Matt Haig.jpg" alt="The Midnight Library" width="100"></td>
-            <td>Matt Haig</td>
-            <td>A novel about the choices we make, with a unique twist on how we live alternate lives through different decisions.</td>
-        </tr>
-        <tr>
-            <td>Project Hail Mary</td>
-            <td><img src="images/Project Hail Mary by Andy Weir.jpg" alt="Project Hail Mary" width="100"></td>
-            <td>Andy Weir</td>
-            <td>A gripping sci-fi adventure where one man's survival holds the key to humanity's future.</td>
-        </tr>
-        <tr>
-            <td>Klara and the Sun</td>
-            <td><img src="images/Klara and the Sun by Kazuo Ishiguro.jpg" alt="Klara and the Sun" width="100"></td>
-            <td>Kazuo Ishiguro</td>
-            <td>A thought-provoking novel about an artificial friend observing human life and yearning for connection.</td>
-        </tr>
+        <!-- Book list goes here -->
     </table>
-
-    <!-- User input form -->
-    <h2>User Input Form</h2>
-    <form action="/submit" method="post">
-        <table>
-            <tr>
-                <td><label for="first-name">First Name:</label></td>
-                <td><input type="text" id="first-name" name="first-name"></td>
-            </tr>
-            <tr>
-                <td><label for="last-name">Last Name:</label></td>
-                <td><input type="text" id="last-name" name="last-name"></td>
-            </tr>
-            <tr>
-                <td><label for="city">City:</label></td>
-                <td><input type="text" id="city" name="city"></td>
-            </tr>
-            <tr>
-                <td><label for="state">State:</label></td>
-                <td>
-                    <select id="state" name="state">
-                        <option value="NY">New York</option>
-                        <option value="CA">California</option>
-                        <!-- Add more states as needed -->
-                    </select>
-                </td>
-            </tr>
-        </table>
-    </form>
 
     <!-- Social media icons -->
     <div class="social-icons">
