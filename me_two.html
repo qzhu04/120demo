@@ -37,7 +37,7 @@
         /* Paragraph (body text) styling */
         p {
             font-family: 'Arial Black', sans-serif;
-            font-size: 0.875em; /* Smaller standard text size */
+            font-size: 1em; /* Consistent font size for all paragraphs */
             text-shadow: 1px 1px #000;
             line-height: 1.8;
         }
@@ -65,11 +65,9 @@
         /* Updated food image */
         .food-image {
             background-image: url('images/img-bibimbap.jpg');
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            background-size: contain;
-            background-repeat: no-repeat;
+            width: 600px; /* Adjust size for the landscape view */
+            height: 400px;
+            background-size: cover;
             background-position: center;
             margin-right: 20px;
         }
@@ -89,11 +87,10 @@
         table, th, td {
             border: 1px solid #fff;
             padding: 10px;
-            color: #008000; /* Green text for table content */
+            color: #008000;
             font-style: italic;
         }
 
-        /* Different font sizes for table headings and cells */
         th {
             font-size: 1.8em; /* Larger font size for the header */
         }
@@ -129,13 +126,12 @@
 
         /* Social media icons styling */
         .social-icons {
-            position: fixed;
-            top: 100px;
-            right: 35px;
+            text-align: center;
+            margin-top: 50px;
         }
 
         .social-icons a {
-            margin: 0 10px;
+            margin: 0 15px; /* Adds space between the icons */
             font-size: 24px;
             color: #fff;
         }
@@ -143,13 +139,16 @@
 </head>
 <body>
 
-    <!-- Main title of the page -->
     <h1>Qian Zhu</h1>
 
-    <!-- Paragraph about a trip -->
+    <!-- Paragraphs with consistent font size -->
     <p>Last summer, my family embarked on a road trip from Boston to San Diego. Initially, we planned to spend a week at Yellowstone National Park, but because of our dog, we chose to drive there instead of flying. Along the way, my daughter expressed interest in visiting the San Diego Zoo, which led us to extend our trip.</p>
 
+    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel/?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6SzcrSQuWL0UgOHJ_Rzqjuf7UE8IfdPcPvl9jKhrntgyN2OtBnLMTDgaArDXEALw_wcB" target="_blank">El Tovar Dining Room</a>, nestled in the historic El Tovar Hotel at Grand Canyon National Park. With breathtaking views of the South Rim, the restaurant offers a unique taste of the region, featuring dishes like roasted poblano pepper soup and Colorado rack of lamb.</p>
+
     <p>During our journey, we explored many breathtaking locations such as Yosemite, Antelope Canyon, Death Valley, Zion, and Bryce National Parks. The entire trip took a month to complete, and it was an unforgettable adventure.</p>
+
+    <p>My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!</p>
 
     <!-- Favorite pets section -->
     <h2>My Favorite Pets</h2>
@@ -159,13 +158,10 @@
         <li>A cat named Oscar</li>
     </ul>
 
-    <!-- Favorite restaurant -->
-    <p>My favorite restaurant is the <a href="https://www.grandcanyonlodges.com/lodging/el-tovar-hotel/?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6SzcrSQuWL0UgOHJ_Rzqjuf7UE8IfdPcPvl9jKhrntgyN2OtBnLMTDgaArDXEALw_wcB" target="_blank">El Tovar Dining Room</a>, nestled in the historic El Tovar Hotel at Grand Canyon National Park. With breathtaking views of the South Rim, the restaurant offers a unique taste of the region, featuring dishes like roasted poblano pepper soup and Colorado rack of lamb.</p>
-
     <!-- Favorite food section -->
     <div class="food-container">
         <div class="food-image"></div>
-        <div class="food-text">My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!</div>
+        <div class="food-text">My favorite food is a Korean dish called Bibimbap...</div>
     </div>
 
     <!-- Favorite books section -->
@@ -202,35 +198,6 @@
             <td>A thought-provoking novel about an artificial friend observing human life and yearning for connection.</td>
         </tr>
     </table>
-
-    <!-- User input form -->
-    <h2>User Input Form</h2>
-    <form action="/submit" method="post">
-        <table>
-            <tr>
-                <td><label for="first-name">First Name:</label></td>
-                <td><input type="text" id="first-name" name="first-name"></td>
-            </tr>
-            <tr>
-                <td><label for="last-name">Last Name:</label></td>
-                <td><input type="text" id="last-name" name="last-name"></td>
-            </tr>
-            <tr>
-                <td><label for="city">City:</label></td>
-                <td><input type="text" id="city" name="city"></td>
-            </tr>
-            <tr>
-                <td><label for="state">State:</label></td>
-                <td>
-                    <select id="state" name="state">
-                        <option value="NY">New York</option>
-                        <option value="CA">California</option>
-                        <!-- Add more states as needed -->
-                    </select>
-                </td>
-            </tr>
-        </table>
-    </form>
 
     <!-- Social media icons -->
     <div class="social-icons">
