@@ -60,13 +60,13 @@
             display: flex;
             align-items: center;
             margin-top: 20px;
+            width: 100%; /* Ensure the container takes the full width */
         }
 
-        /* Updated food image */
         .food-image {
             background-image: url('images/img-bibimbap.jpg');
-            width: 600px; /* Adjust size for the landscape view */
-            height: 400px;
+            width: 50%; /* Set the image to take 50% of the container width */
+            height: 400px; /* Set height to match image aspect ratio */
             background-size: cover;
             background-position: center;
             margin-right: 20px;
@@ -75,6 +75,8 @@
         .food-text {
             font-size: 1.5em;
             color: #fff;
+            width: 50%; /* Text takes up the remaining 50% */
+            text-align: justify; /* Ensure text aligns well */
         }
 
         /* Table styling */
@@ -108,22 +110,6 @@
             background-color: #b08dc6; /* Lighter pastel purple */
         }
 
-        /* Form table styling */
-        form table {
-            width: 100%;
-        }
-
-        form label {
-            display: block;
-            text-align: right;
-            padding-right: 10px;
-            color: #fff;
-        }
-
-        form td {
-            padding: 10px;
-        }
-
         /* Social media icons styling */
         .social-icons {
             text-align: center;
@@ -148,7 +134,13 @@
 
     <p>During our journey, we explored many breathtaking locations such as Yosemite, Antelope Canyon, Death Valley, Zion, and Bryce National Parks. The entire trip took a month to complete, and it was an unforgettable adventure.</p>
 
-    <p>My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!</p>
+    <!-- Favorite food section with updated layout -->
+    <div class="food-container">
+        <div class="food-image"></div>
+        <div class="food-text">
+            My favorite food is a Korean dish called Bibimbap. It is made with pre-steamed rice placed in a stone pot, topped with a variety of vegetables, meats, fried eggs, and Korean hot sauce. To eat Bibimbap, you stir all the ingredients thoroughly and enjoy the mix of flavors!
+        </div>
+    </div>
 
     <!-- Favorite pets section -->
     <h2>My Favorite Pets</h2>
@@ -157,12 +149,6 @@
         <li>A conure parrot named Mango</li>
         <li>A cat named Oscar</li>
     </ul>
-
-    <!-- Favorite food section -->
-    <div class="food-container">
-        <div class="food-image"></div>
-        <div class="food-text">My favorite food is a Korean dish called Bibimbap...</div>
-    </div>
 
     <!-- Favorite books section -->
     <h2>My Favorite Books</h2>
