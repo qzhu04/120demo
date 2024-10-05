@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+<body>
+    <script>
+        // Ask for first and last name
+        let firstName = prompt("Enter your first name:");
+        let lastName = prompt("Enter your last name:");
+        alert("Your name is " + firstName + " " + lastName);
+
+        // Ask for number of children
+        let children = prompt("How many children do you have?");
+        let message = "";
+        if (children == 0) {
+            message = "You have no children";
+        } else if (children == 1) {
+            message = "You have 1 child";
+        } else {
+            message = "You have " + children + " children";
+        }
+        document.body.innerHTML = "<p>" + message + "</p>";
+    </script>
+</body>
+</html>
