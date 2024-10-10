@@ -1,266 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvet Harmony - Home</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+/* Global Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #667399;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
 
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: #667399; /* Background color for all pages */
-            margin: 0;
-            padding: 0;
-            color: white;
-        }
+/* Header and Navigation */
+nav {
+    background-color: #525c7a;
+    padding: 20px;
+    text-align: center;
+}
 
-        /* Header and Navigation */
-        nav {
-            background-color: #525c7a; /* Navigation background color */
-            padding: 20px;
-            text-align: center;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-        }
+nav a:hover {
+    color: #FFD700;
+}
 
-        nav a:hover {
-            color: #FFD700; /* Gold color on hover */
-        }
+/* Hero Section for Home Page */
+.banner {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
-        /* Hero Section for Home Page */
-        .banner {
-            background-image: url('images/banner.jpg'); /* Updated Banner image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
+.banner h1 {
+    font-size: 3rem;
+    color: white;
+}
 
-        .banner h1 {
-            font-size: 3rem;
-            color: white;
-        }
+.banner p {
+    font-size: 1.5rem;
+    color: lightgray;
+}
 
-        .banner p {
-            font-size: 1.5rem;
-            color: lightgray;
-        }
+/* Main Content */
+.content {
+    padding: 40px;
+    text-align: center;
+}
 
-        .button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4B0082; /* Deep purple */
-            color: #FFD700; /* Gold */
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
+footer {
+    background-color: #525c7a;
+    padding: 20px;
+   
+    text-align: center;
+    color: white;
+}
 
-        .button:hover {
-            background-color: #FFD700; /* Gold */
-            color: #4B0082; /* Deep purple */
-        }
+/* Band Members Section */
+.member-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
 
-        /* Main Content */
-        .content {
-            padding: 40px;
-            text-align: center;
-        }
+.member {
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+}
 
-        .content h1, .content h2 {
-            background-color: #525c7a; /* Header background color */
-            padding: 20px;
-            text-align: center;
-        }
+.member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
-        .content p {
-            font-size: 1.3rem;
-        }
+/* Booking Form Section */
+.booking-form {
+    background-image: url('images/form.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
 
-        /* Footer Styles */
-        footer {
-            background-color: #525c7a; /* Footer background color */
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+.booking-form h1 {
+    font-size: 2.5rem;
+    color: white;
+}
 
-        /* Band Members Section (Band Page) */
-        h1 {
-            text-align: center;
-            background-color: #525c7a; /* Header background color for Band Members page */
-            padding: 20px;
-        }
+.booking-form p {
+    font-size: 1.2rem;
+    color: lightgray;
+}
 
-        .member-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 20px;
-        }
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .member {
-            width: 250px;
-            margin: 10px;
-            text-align: center;
-        }
+label, input, textarea {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
 
-        .member img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
 
-        /* Booking Form Section */
-        .booking-form {
-            background-image: url('images/form.jpg'); /* Updated Booking Form image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 50px;
-            text-align: center;
-            color: white;
-        }
+.button {
+    padding: 10px 20px;
+    background-color: #4B0082;
+    color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
-        .booking-form h1 {
-            font-size: 2.5rem;
-            color: white;
-        }
+.button:hover {
+    background-color: #FFD700;
+    color: #4B0082;
+}
 
-        .booking-form p {
-            font-size: 1.2rem;
-            color: lightgray;
-        }
+/* Responsive adjustments for mobile screens */
+@media only screen and (max-width: 600px) {
+    /* Adjust the banner height */
+    .banner {
+        height: 300px;
+    }
 
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* Adjust the heading sizes */
+    h1 {
+        font-size: 2rem;
+    }
 
-        label, input, textarea {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            width: 100%;
-            max-width: 400px;
-        }
+    .banner h1 {
+        font-size: 2rem;
+    }
 
-        input, textarea {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
+    .banner p {
+        font-size: 1rem;
+    }
 
-        .button {
-            padding: 10px 20px;
-            background-color: #4B0082; /* Deep purple */
-            color: #FFD700; /* Gold */
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
+    /* Adjust padding and margins for mobile */
+    .content {
+        padding: 20px;
+    }
 
-        .button:hover {
-            background-color: #FFD700; /* Gold */
-            color: #4B0082; /* Deep purple */
-        }
+    /* Adjust navigation bar for mobile */
+    nav {
+        flex-direction: column;
+    }
 
-        /* Responsive adjustments for mobile screens */
-        @media only screen and (max-width: 600px) {
-            /* Adjust the banner height */
-            .banner {
-                height: 300px; /* Reduce banner height on mobile */
-            }
+    nav a {
+        margin: 10px 0;
+    }
 
-            /* Adjust the heading sizes */
-            h1 {
-                font-size: 2rem; /* Smaller font size for mobile */
-            }
+    /* Band members section for mobile */
+    .member-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .banner h1 {
-                font-size: 2rem; /* Smaller heading in the banner */
-            }
+    .member {
+        width: 100%;
+    }
 
-            .banner p {
-                font-size: 1rem; /* Smaller subheading in the banner */
-            }
-
-            /* Adjust padding and margins for mobile */
-            .content {
-                padding: 20px; /* Reduce padding on mobile */
-            }
-
-            /* Adjust navigation bar for mobile */
-            nav {
-                flex-direction: column; /* Stack links vertically on mobile */
-            }
-
-            nav a {
-                margin: 10px 0; /* Add margin between links */
-            }
-
-            /* Band members section for mobile */
-            .member-container {
-                flex-direction: column; /* Stack band members vertically */
-                align-items: center;
-            }
-
-            .member {
-                width: 100%; /* Make the member section take full width */
-            }
-
-            /* Adjust form for mobile */
-            form {
-                width: 100%;
-                max-width: 300px; /* Make the form narrower on mobile */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="band.html">Band Members</a>
-        <a href="songlist.html">Song List</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="banner">
-        <h1>Creating Unforgettable Moments with Music</h1>
-        <p>Live Wedding and Event Band | Blending Classics & Modern Hits</p>
-        <a href="contact.html" class="button">Check Our Availability</a>
-    </section>
-
-    <!-- Main Content -->
-    <div class="content">
-        <h1>Welcome to Velvet Harmony</h1>
-        <p>Your go-to live band for weddings and special events! With years of experience and a diverse song list, Velvet Harmony will make your event unforgettable.</p>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Velvet Harmony &copy; 2024 | Follow us on social media</p>
-    </footer>
-
-</body>
-</html>
+    /* Adjust form for mobile */
+    form {
+        width: 100%;
+        max-width: 300px;
+    }
+}
