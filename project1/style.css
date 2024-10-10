@@ -111,6 +111,32 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+.upcoming-events {
+    padding: 20px;
+    text-align: center;
+}
+
+.upcoming-events table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.upcoming-events th, .upcoming-events td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.upcoming-events th {
+    background-color: #6A5ACD;
+    color: white;
+}
+
+.upcoming-events td {
+    color: #333;
+}
+
 /* Footer Design */
 footer {
     background-color: rgba(82, 92, 122, 0.8);
@@ -145,4 +171,56 @@ footer a:hover {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Contact Form Container Styles */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust height to center the form */
+}
+
+form {
+    background-color: rgba(82, 92, 122, 0.8); /* Same background for consistency */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px; /* Adjust the form width */
+    width: 100%;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #4B0082;
+    color: #FFD700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #FFD700;
+    color: #4B0082;
+    transform: scale(1.05);
 }
