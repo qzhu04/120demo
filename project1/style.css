@@ -11,6 +11,10 @@ body {
     padding: 0;
 }
 
+.gold-text {
+    color: #FFD700; /* Gold color for specific text */
+}
+
 /* Header and Navigation */
 header {
     display: flex;
@@ -18,11 +22,6 @@ header {
     align-items: center;
     background-color: rgba(82, 92, 122, 0.8); /* Add transparency to see the background */
     padding: 20px;
-}
-
-header {
-    text-align: center;
-    margin-top: 20px;
 }
 
 header img {
@@ -35,32 +34,10 @@ header h1 {
     color: #6A5ACD; /* Soft lavender color to match the logo */
 }
 
-/* Media query for mobile screens */
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-    header {
-        text-align: center;
-    }
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: white;
+nav ul {
+    list-style: none;
     display: flex;
-    align-items: center;
-}
-
-.logo img {
-    margin-right: 10px;
-}
-
-nav {
-    display: flex;
-    justify-content: center; /* Updated to center-align the navigation links */
-    align-items: center;
+    gap: 15px;
 }
 
 nav a {
@@ -76,62 +53,98 @@ nav a:hover {
     color: #FFD700;
 }
 
-/* Hero Section for Home Page */
-.banner {
-    background-image: url('images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
-
-.banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark gradient overlay */
-}
-
-.banner h1 {
-    font-size: 3rem;
-    font-family: 'Playfair Display', serif;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.banner p {
-    font-size: 1.5rem;
-    color: lightgray;
-    z-index: 1;
-}
-
-/* CTA Button for Hero Section */
-.hero-cta {
-    margin-top: 20px;
-    background-color: #525c7a; /* Updated background color */
-    color: #FFD700; /* Gold text */
+/* CTA Button */
+.cta-button {
+    background-color: #4B0082;
+    color: #FFD700;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1.2rem;
+    text-transform: uppercase;
     cursor: pointer;
-    z-index: 1;
 }
 
-.hero-cta:hover {
+.cta-button:hover {
     background-color: #FFD700;
-    color: #525c7a; /* Inverted hover colors: gold background and #525c7a text */
+    color: #4B0082;
     transform: scale(1.05);
+}
+
+/* Hero Section for Home Page */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #FFD700; /* Gold color */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #FFD700; /* Gold color */
+}
+
+/* Welcome Section */
+.welcome h2 {
+    color: #FFD700;
+}
+
+.welcome p {
+    color: #FFD700;
+}
+
+/* Services Section */
+.services h2 {
+    color: #FFD700;
+}
+
+.service h3, .service p {
+    color: #FFD700;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery h2 {
+    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Enlarge the image slightly on hover */
 }
 
 /* Main Content */
@@ -262,51 +275,19 @@ footer .social-icons a:hover {
 
 /* Responsive adjustments for mobile screens */
 @media only screen and (max-width: 600px) {
-    /* Adjust the banner height */
-    .banner {
-        height: 300px;
+    body {
+        font-size: 14px;
+    }
+    header {
+        text-align: center;
     }
 
-    /* Adjust the heading sizes */
-    h1 {
-        font-size: 2rem;
-    }
-
-    .banner h1 {
-        font-size: 2rem;
-    }
-
-    .banner p {
-        font-size: 1rem;
-    }
-
-    /* Adjust padding and margins for mobile */
-    .content {
-        padding: 20px;
-    }
-
-    /* Adjust navigation bar for mobile */
-    nav {
+    nav ul {
         flex-direction: column;
-    }
-
-    nav a {
-        margin: 10px 0;
-    }
-
-    /* Band members section for mobile */
-    .member-container {
-        grid-template-columns: 1fr;
         align-items: center;
     }
 
-    .member {
-        width: 100%;
-    }
-
-    /* Adjust form for mobile */
-    form {
-        width: 100%;
-        max-width: 300px;
+    .gallery-grid {
+        flex-direction: column;
     }
 }
