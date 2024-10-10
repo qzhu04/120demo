@@ -5,47 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velvet Harmony - Song List</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Add the style directly into this HTML file -->
+    <style>
+        /* General Page Styling */
+        body {
+            background-color: #f8f4f0;
+            color: #333333;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #5b4e77;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header .logo span {
+            font-size: 2rem;
+            color: white;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* Hero Banner Styling */
+        .banner {
+            background-image: url('images/wedding_banner.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            color: #f8f4f0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            color: #FFD700;
+        }
+
+        .banner p {
+            color: #e0e0e0;
+            margin-top: 10px;
+        }
+
+        /* Song List Section */
+        .song-list {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .song-list h3 {
+            color: #8B0000;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .song-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .song-list ul li {
+            font-size: 1.2rem;
+            color: #85ababa;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #5b4e77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+        }
+
+        footer p {
+            margin-top: 10px;
+            color: #dddddd;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            /* Adjust header and navigation for smaller screens */
+            header .logo span {
+                font-size: 1.5rem;
+            }
+
+            header nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            /* Adjust banner text size */
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            /* Reduce padding in the song list for smaller screens */
+            .song-list {
+                padding: 20px 10px;
+            }
+
+            .song-list h3 {
+                font-size: 1.5rem;
+            }
+
+            .song-list ul li {
+                font-size: 1rem;
+            }
+
+            /* Footer adjustments */
+            footer {
+                padding: 15px;
+            }
+
+            footer .social-icons img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
 </head>
-<body style="background-color: #667399; color: white; font-family: 'Playfair Display', serif;">
+<body>
 
     <!-- Header Section -->
-    <header style="background-color: #525c7a; padding: 20px;">
+    <header>
         <div class="logo">
             <img src="images/logo.png" alt="Velvet Harmony Logo">
-            <span style="font-size: 1.5rem; color: white;">Velvet Harmony</span>
+            <span>Velvet Harmony</span>
         </div>
         <nav>
-            <a href="index.html" style="color: white;">Home</a>
-            <a href="band.html" style="color: white;">Band Members</a>
-            <a href="songlist.html" style="color: white;">Song List</a>
-            <a href="contact.html" style="color: white;">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="band.html">Band Members</a>
+            <a href="songlist.html">Song List</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="banner" style="background-color: #525c7a; text-align: center; padding: 50px;">
-        <h1 style="font-size: 3rem; color: white;">The Music We Play: A Soundtrack for Your Celebration</h1>
-        <p style="color: lightgray;">Browse our versatile setlist, categorized by genres to fit any mood or occasion.</p>
-    </section>
-
-    <!-- Song Categories Section -->
-    <section class="song-categories content" style="padding: 20px; text-align: center;">
-        <h2 style="color: white;">Our Song Categories</h2>
-        <ul>
-            <li><a href="#pop" style="color: white;">Pop & Top 40</a></li>
-            <li><a href="#classic-rock" style="color: white;">Classic Rock</a></li>
-            <li><a href="#motown-soul" style="color: white;">Motown & Soul</a></li>
-            <li><a href="#jazz-standards" style="color: white;">Jazz & Standards</a></li>
-            <li><a href="#dance-party" style="color: white;">Dance & Party Hits</a></li>
-            <li><a href="#romantic-ballads" style="color: white;">Romantic Ballads</a></li>
-            <li><a href="#special-requests" style="color: white;">Special Requests</a></li>
-        </ul>
+    <section class="banner">
+        <h1>The Music We Play: A Soundtrack for Your Celebration</h1>
+        <p>Browse our versatile setlist, categorized by genres to fit any mood or occasion.</p>
     </section>
 
     <!-- Song Lists by Category -->
-    <section class="song-list" style="padding: 20px;">
-        <h3 id="pop" style="color: #FFD700;">Pop & Top 40 Hits</h3>
+    <section class="song-list">
+        <h3 id="pop">Pop & Top 40 Hits</h3>
         <ul>
             <li>Shape of You - Ed Sheeran</li>
             <li>Uptown Funk - Bruno Mars</li>
@@ -59,7 +188,7 @@
             <li>Happy - Pharrell Williams</li>
         </ul>
 
-        <h3 id="classic-rock" style="color: #FFD700;">Classic Rock</h3>
+        <h3 id="classic-rock">Classic Rock</h3>
         <ul>
             <li>Bohemian Rhapsody - Queen</li>
             <li>Sweet Child O' Mine - Guns N' Roses</li>
@@ -73,7 +202,7 @@
             <li>Hotel California - Eagles</li>
         </ul>
 
-        <h3 id="motown-soul" style="color: #FFD700;">Motown & Soul</h3>
+        <h3 id="motown-soul">Motown & Soul</h3>
         <ul>
             <li>Superstition - Stevie Wonder</li>
             <li>Respect - Aretha Franklin</li>
@@ -87,66 +216,22 @@
             <li>How Sweet It Is - Marvin Gaye</li>
         </ul>
 
-        <h3 id="jazz-standards" style="color: #FFD700;">Jazz & Standards</h3>
-        <ul>
-            <li>What a Wonderful World - Louis Armstrong</li>
-            <li>Take Five - Dave Brubeck</li>
-            <li>At Last - Etta James</li>
-            <li>Fly Me to the Moon - Frank Sinatra</li>
-            <li>The Way You Look Tonight - Frank Sinatra</li>
-            <li>Unforgettable - Nat King Cole</li>
-            <li>Summertime - Ella Fitzgerald</li>
-            <li>Dream a Little Dream of Me - Ella Fitzgerald</li>
-            <li>Come Fly with Me - Frank Sinatra</li>
-            <li>My Funny Valentine - Chet Baker</li>
-        </ul>
+        <!-- Add more categories similarly -->
 
-        <h3 id="dance-party" style="color: #FFD700;">Dance & Party Hits</h3>
-        <ul>
-            <li>Don't Stop the Music - Rihanna</li>
-            <li>Happy - Pharrell Williams</li>
-            <li>I Wanna Dance with Somebody - Whitney Houston</li>
-            <li>Shut Up and Dance - WALK THE MOON</li>
-            <li>24K Magic - Bruno Mars</li>
-            <li>We Found Love - Rihanna</li>
-            <li>Party Rock Anthem - LMFAO</li>
-            <li>Single Ladies - Beyoncé</li>
-            <li>Uptown Funk - Bruno Mars</li>
-            <li>Hey Ya! - OutKast</li>
-        </ul>
-
-        <h3 id="romantic-ballads" style="color: #FFD700;">Romantic Ballads</h3>
-        <ul>
-            <li>Thinking Out Loud - Ed Sheeran</li>
-            <li>A Thousand Years - Christina Perri</li>
-            <li>Perfect - Ed Sheeran</li>
-            <li>I Will Always Love You - Whitney Houston</li>
-            <li>Unchained Melody - The Righteous Brothers</li>
-            <li>All of Me - John Legend</li>
-            <li>Wonderful Tonight - Eric Clapton</li>
-            <li>Endless Love - Diana Ross & Lionel Richie</li>
-            <li>Make You Feel My Love - Adele</li>
-            <li>At Last - Etta James</li>
-        </ul>
-
-        <h3 id="special-requests" style="color: #FFD700;">Special Requests</h3>
-        <ul>
-            <li>Custom songs as per client requests</li>
-        </ul>
     </section>
 
     <!-- Footer Section -->
-    <footer style="background-color: #525c7a; padding: 20px; text-align: center;">
-        <p style="color: white;">Velvet Harmony &copy; 2024 | Follow us on social media</p>
+    <footer>
+        <p>Velvet Harmony &copy; 2024 | Follow us on social media</p>
         <div class="social-icons">
             <a href="https://facebook.com" target="_blank">
-                <img src="CS120/project1/images/facebook.jpg" alt="Facebook" style="width: 40px; height: 40px; margin: 5px;">
+                <img src="CS120/project1/images/facebook.jpg" alt="Facebook">
             </a>
             <a href="https://instagram.com" target="_blank">
-                <img src="CS120/project1/images/webic.jpg" alt="Instagram" style="width: 40px; height: 40px; margin: 5px;">
+                <img src="CS120/project1/images/webic.jpg" alt="Instagram">
             </a>
             <a href="https://youtube.com" target="_blank">
-                <img src="CS120/project1/images/twitter.jpg" alt="Twitter" style="width: 40px; height: 40px; margin: 5px;">
+                <img src="CS120/project1/images/twitter.jpg" alt="Twitter">
             </a>
         </div>
     </footer>
