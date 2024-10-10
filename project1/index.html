@@ -6,6 +6,210 @@
     <title>Velvet Harmony</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Base styles for the entire site */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #4a4a8a;
+        }
+
+        header img {
+            width: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero section */
+        .hero {
+            background: url('images/banner.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: #ffd700;
+            text-align: center;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .gold-text {
+            color: #ffd700;
+        }
+
+        /* Services Section */
+        .services {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .service-category {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+            width: 30%;
+        }
+
+        /* Gallery Section */
+        .gallery-preview {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* Reduced size for contact button */
+        .cta-button {
+            background-color: #5a2f82;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transform: scale(0.67); /* Reduces size by 1/3 */
+            transform-origin: center;
+        }
+
+        .cta-button:hover {
+            background-color: #431f66;
+        }
+
+        /* Upcoming Events Section */
+        .upcoming-events table {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+
+        .upcoming-events table th, .upcoming-events table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .upcoming-events table th {
+            background-color: #4a4a8a;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a4a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        /* Contact Information and Newsletter */
+        .contact-info, .newsletter {
+            margin-top: 20px;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .service-category {
+                flex-direction: column;
+            }
+
+            .service {
+                width: 80%;
+            }
+
+            .upcoming-events table {
+                width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -62,12 +266,12 @@
     <section class="gallery-preview">
         <h2 class="gold-text">Photo Gallery</h2>
         <div class="gallery-grid">
-            <a href="gallery.html"><img src="images/saxophone.jpg" alt="Saxophone Performance" width="200" height="150"></a>
-            <a href="gallery.html"><img src="images/wedding.jpg" alt="Wedding Moment" width="200" height="150"></a>
-            <a href="gallery.html"><img src="images/sparklers.jpg" alt="Sparkler Event" width="200" height="150"></a>
-            <a href="gallery.html"><img src="images/performance.jpg" alt="City Band Playing" width="200" height="150"></a>
-            <a href="gallery.html"><img src="images/instruments.jpg" alt="Sparkler Event" width="200" height="150"></a>
-            <a href="gallery.html"><img src="images/city_band.jpg" alt="City Band Playing" width="200" height="150"></a>
+            <a href="gallery.html"><img src="images/saxophone.jpg" alt="Saxophone Performance"></a>
+            <a href="gallery.html"><img src="images/wedding.jpg" alt="Wedding Moment"></a>
+            <a href="gallery.html"><img src="images/sparklers.jpg" alt="Sparkler Event"></a>
+            <a href="gallery.html"><img src="images/performance.jpg" alt="City Band Playing"></a>
+            <a href="gallery.html"><img src="images/instruments.jpg" alt="Instruments on Stage"></a>
+            <a href="gallery.html"><img src="images/city_band.jpg" alt="City Band Playing"></a>
         </div>
         <a href="gallery.html" class="cta-button">View Full Gallery</a>
     </section>

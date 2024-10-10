@@ -3,93 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvet Harmony - Gallery</title>
+    <title>Velvet Harmony</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Center the gallery and make it responsive */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-        }
-
-        h2 {
-            text-align: center;
-            color: #FFD700;
-        }
-
-        /* Adjust the footer to match styling */
-        footer {
-            background-color: #525c7a;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .social-icons img {
-            width: 30px;
-            margin: 10px;
-        }
-    </style>
 </head>
-<body style="background-color: #667399; color: white; font-family: 'Playfair Display', serif;">
+<body>
 
     <!-- Header -->
-    <header style="background-color: #525c7a; padding: 20px;">
+    <header>
         <div id="logo">
-            <img src="CS120/images/logo.png" alt="Velvet Harmony Logo">
-            <h1 style="color: white;">Velvet Harmony</h1>
+            <img src="images/logo.png" alt="Velvet Harmony Logo">
+            <h1>Velvet Harmony</h1>
         </div>
         <nav>
-            <ul style="list-style-type: none; display: flex; justify-content: center; gap: 20px;">
-                <li><a href="index.html" style="color: white;">Home</a></li>
-                <li><a href="band.html" style="color: white;">Band Members</a></li>
-                <li><a href="services.html" style="color: white;">Services</a></li>
-                <li><a href="testimonials.html" style="color: white;">Testimonials</a></li>
-                <li><a href="gallery.html" style="color: white;">Gallery</a></li>
-                <li><a href="contact.html" class="cta-button" style="color: white; background-color: #4B0082; padding: 5px 10px; border-radius: 5px;">Book Velvet Harmony</a></li>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="band.html">Band Members</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="cta-button">Book Velvet Harmony</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Gallery Section (Full-Size Images 800x600) -->
-    <section class="gallery">
-        <h2>Photo Gallery</h2>
-        <div class="gallery-grid">
-            <a href="CS120/images/saxophone_b.jpg" target="_blank">
-                <img src="CS120/images/saxophone_b.jpg" alt="Saxophone Performance">
-            </a>
-            <a href="CS120/images/wedding_b.jpg" target="_blank">
-                <img src="CS120/images/wedding_b.jpg" alt="Wedding Moment">
-            </a>
-            <a href="CS120/images/sparklers_b.jpg" target="_blank">
-                <img src="CS120/images/sparklers_b.jpg" alt="Sparkler Event">
-            </a>
-            <a href="CS120/images/instruments_b.jpg" target="_blank">
-                <img src="CS120/images/instruments_b.jpg" alt="Instruments on Stage">
-            </a>
-            <a href="CS120/images/performance_b.jpg" target="_blank">
-                <img src="CS120/images/performance_b.jpg" alt="Live Performance">
-            </a>
-            <a href="CS120/images/city_band_b.jpg" target="_blank">
-                <img src="CS120/images/city_band_b.jpg" alt="City Band Playing">
-            </a>
+    <!-- Hero Section (Banner) -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2 class="gold-text">Creating Unforgettable Moments with Music</h2>
+            <p class="gold-text">Live Wedding and Event Band | Blending Classics & Modern Hits</p>
         </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h2 class="gold-text">Welcome to Velvet Harmony</h2>
+        <p class="gold-text">Your go-to live band for weddings and special events! With years of experience and a diverse song list, Velvet Harmony will make your event unforgettable.</p>
+    </section>
+
+    <!-- Gallery Section (Preview Thumbnails) -->
+    <section class="gallery-preview">
+        <h2 class="gold-text">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <a href="images/saxophone.jpg" target="_blank"><img src="images/saxophone.jpg" alt="Saxophone Performance" width="800" height="600"></a>
+            <a href="images/wedding.jpg" target="_blank"><img src="images/wedding.jpg" alt="Wedding Moment" width="800" height="600"></a>
+            <a href="images/sparklers.jpg" target="_blank"><img src="images/sparklers.jpg" alt="Sparkler Event" width="800" height="600"></a>
+            <a href="images/performance.jpg" target="_blank"><img src="images/performance.jpg" alt="City Band Playing" width="800" height="600"></a>
+            <a href="images/instruments.jpg" target="_blank"><img src="images/instruments.jpg" alt="Instruments on Stage" width="800" height="600"></a>
+            <a href="images/city_band.jpg" target="_blank"><img src="images/city_band.jpg" alt="City Band Playing" width="800" height="600"></a>
+        </div>
+        <a href="gallery.html" class="cta-button">View Full Gallery</a>
     </section>
 
     <!-- Footer -->
@@ -97,15 +58,16 @@
         <p>Velvet Harmony &copy; 2024 | Follow us on social media</p>
         <div class="social-icons">
             <a href="https://facebook.com" target="_blank">
-                <img src="CS120/project1/images/facebook.jpg" alt="Facebook">
+                <img src="images/facebook.jpg" alt="Facebook">
             </a>
             <a href="https://instagram.com" target="_blank">
-                <img src="CS120/project1/images/instagram.jpg" alt="Instagram">
+                <img src="images/instagram.jpg" alt="Instagram">
             </a>
             <a href="https://twitter.com" target="_blank">
-                <img src="CS120/project1/images/twitter.jpg" alt="Twitter">
+                <img src="images/twitter.jpg" alt="Twitter">
             </a>
         </div>
+        <p>© 2024 Velvet Harmony. All rights reserved.</p>
     </footer>
 
 </body>
