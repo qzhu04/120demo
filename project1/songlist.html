@@ -7,99 +7,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #667399; color: white; font-family: 'Playfair Display', serif;">
 
-    <h1>The Music We Play: A Soundtrack for Your Celebration</h1>
+    <!-- Header Section -->
+    <header style="background-color: #525c7a; padding: 20px;">
+        <div class="logo">
+            <img src="images/logo.png" alt="Velvet Harmony Logo">
+            <span style="font-size: 1.5rem; color: white;">Velvet Harmony</span>
+        </div>
+        <nav>
+            <a href="index.html" style="color: white;">Home</a>
+            <a href="band.html" style="color: white;">Band Members</a>
+            <a href="songlist.html" style="color: white;">Song List</a>
+            <a href="contact.html" style="color: white;">Contact</a>
+        </nav>
+    </header>
 
-    <section class="song-categories">
-        <h2>Our Song Categories</h2>
+    <!-- Hero Section -->
+    <section class="banner" style="background-color: #525c7a; text-align: center; padding: 50px;">
+        <h1 style="font-size: 3rem; color: white;">The Music We Play: A Soundtrack for Your Celebration</h1>
+        <p style="color: lightgray;">Browse our versatile setlist, categorized by genres to fit any mood or occasion.</p>
+    </section>
+
+    <!-- Song Categories Section -->
+    <section class="song-categories content" style="padding: 20px; text-align: center;">
+        <h2 style="color: white;">Our Song Categories</h2>
         <ul>
-            <li>Pop & Top 40</li>
-            <li>Classic Rock</li>
-            <li>Motown & Soul</li>
-            <li>Jazz & Standards</li>
-            <li>Dance & Party Hits</li>
-            <li>Romantic Ballads</li>
-            <li>Special Requests</li>
+            <li><a href="#pop" style="color: white;">Pop & Top 40</a></li>
+            <li><a href="#classic-rock" style="color: white;">Classic Rock</a></li>
+            <li><a href="#motown-soul" style="color: white;">Motown & Soul</a></li>
+            <li><a href="#jazz-standards" style="color: white;">Jazz & Standards</a></li>
+            <li><a href="#dance-party" style="color: white;">Dance & Party Hits</a></li>
+            <li><a href="#romantic-ballads" style="color: white;">Romantic Ballads</a></li>
+            <li><a href="#special-requests" style="color: white;">Special Requests</a></li>
         </ul>
     </section>
 
-    <!-- Song List -->
-    <table>
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Song</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Pop & Top 40</td>
-                <td>Shape of You - Ed Sheeran</td>
-            </tr>
-            <tr>
-                <td>Classic Rock</td>
-                <td>Bohemian Rhapsody - Queen</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        </tbody>
-    </table>
-        <!-- Our Song Categories -->
-<h2>Our Song Categories</h2>
-<ul>
-    <li><a href="#pop">Pop & Top 40</a></li>
-    <li><a href="#classic-rock">Classic Rock</a></li>
-    <li><a href="#motown-soul">Motown & Soul</a></li>
-    <li><a href="#jazz-standards">Jazz & Standards</a></li>
-    <li><a href="#dance-party">Dance & Party Hits</a></li>
-    <li><a href="#romantic-ballads">Romantic Ballads</a></li>
-    <li><a href="#special-requests">Special Requests</a></li>
-</ul>
+    <!-- Song Lists by Category -->
+    <section class="song-list" style="padding: 20px;">
+        <h3 id="pop" style="color: #FFD700;">Pop & Top 40 Hits</h3>
+        <ul>
+            <li>Shape of You - Ed Sheeran</li>
+            <li>Uptown Funk - Bruno Mars</li>
+        </ul>
 
-<!-- Song Lists by Category -->
-<h3 id="pop">Pop & Top 40 Hits</h3>
-<ul>
-    <li>Shape of You - Ed Sheeran</li>
-    <li>Uptown Funk - Bruno Mars</li>
-</ul>
+        <h3 id="classic-rock" style="color: #FFD700;">Classic Rock</h3>
+        <ul>
+            <li>Bohemian Rhapsody - Queen</li>
+            <li>Sweet Child O' Mine - Guns N' Roses</li>
+        </ul>
 
-<h3 id="classic-rock">Classic Rock</h3>
-<ul>
-    <li>Bohemian Rhapsody - Queen</li>
-    <li>Sweet Child O' Mine - Guns N' Roses</li>
-</ul>
+        <h3 id="motown-soul" style="color: #FFD700;">Motown & Soul</h3>
+        <ul>
+            <li>Superstition - Stevie Wonder</li>
+            <li>Respect - Aretha Franklin</li>
+        </ul>
 
-<h3 id="motown-soul">Motown & Soul</h3>
-<ul>
-    <li>Superstition - Stevie Wonder</li>
-    <li>Respect - Aretha Franklin</li>
-</ul>
+        <h3 id="jazz-standards" style="color: #FFD700;">Jazz & Standards</h3>
+        <ul>
+            <li>What a Wonderful World - Louis Armstrong</li>
+            <li>Take Five - Dave Brubeck</li>
+        </ul>
 
-<h3 id="jazz-standards">Jazz & Standards</h3>
-<ul>
-    <li>What a Wonderful World - Louis Armstrong</li>
-    <li>Take Five - Dave Brubeck</li>
-</ul>
+        <h3 id="dance-party" style="color: #FFD700;">Dance & Party Hits</h3>
+        <ul>
+            <li>Don't Stop the Music - Rihanna</li>
+            <li>Happy - Pharrell Williams</li>
+        </ul>
 
-<h3 id="dance-party">Dance & Party Hits</h3>
-<ul>
-    <li>Don't Stop the Music - Rihanna</li>
-    <li>Happy - Pharrell Williams</li>
-</ul>
+        <h3 id="romantic-ballads" style="color: #FFD700;">Romantic Ballads</h3>
+        <ul>
+            <li>Thinking Out Loud - Ed Sheeran</li>
+            <li>A Thousand Years - Christina Perri</li>
+        </ul>
 
-<h3 id="romantic-ballads">Romantic Ballads</h3>
-<ul>
-    <li>Thinking Out Loud - Ed Sheeran</li>
-    <li>A Thousand Years - Christina Perri</li>
-</ul>
+        <h3 id="special-requests" style="color: #FFD700;">Special Requests</h3>
+        <ul>
+            <li>Custom songs as per client requests</li>
+        </ul>
+    </section>
 
-<h3 id="special-requests">Special Requests</h3>
-<ul>
-    <li>Custom songs as per client requests</li>
-</ul>
-
-    <footer>
-        <p>Velvet Harmony &copy; 2024 | Follow us on social media</p>
+    <!-- Footer Section -->
+    <footer style="background-color: #525c7a; padding: 20px; text-align: center;">
+        <p style="color: white;">Velvet Harmony &copy; 2024 | Follow us on social media</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com"><img src="images/facebook-icon.png" alt="Facebook" style="margin: 10px;"></a>
+            <a href="https://www.instagram.com"><img src="images/instagram-icon.png" alt="Instagram" style="margin: 10px;"></a>
+            <a href="https://www.youtube.com"><img src="images/youtube-icon.png" alt="YouTube" style="margin: 10px;"></a>
+        </div>
     </footer>
 
 </body>
