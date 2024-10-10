@@ -1,7 +1,11 @@
 /* Global Styles */
 body {
     font-family: 'Playfair Display', serif;
-    background-color: #667399;
+    background-image: url('images/background.jpg'); /* Set background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
     color: white;
     margin: 0;
     padding: 0;
@@ -12,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #525c7a;
+    background-color: rgba(82, 92, 122, 0.8); /* Add transparency to see the background */
     padding: 20px;
 }
 
@@ -22,7 +26,7 @@ header {
 }
 
 header img {
-    width: 200px; /* Adjust size if needed */
+    width: 100px; /* Adjusted size as per your instruction */
     border-radius: 10px; /* Rounded corners for a smooth look */
 }
 
@@ -55,7 +59,7 @@ header h1 {
 
 nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Updated to center-align the navigation links */
     align-items: center;
 }
 
@@ -114,8 +118,8 @@ nav a:hover {
 /* CTA Button for Hero Section */
 .hero-cta {
     margin-top: 20px;
-    background-color: #4B0082;
-    color: #FFD700;
+    background-color: #525c7a; /* Updated background color */
+    color: #FFD700; /* Gold text */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -126,7 +130,7 @@ nav a:hover {
 
 .hero-cta:hover {
     background-color: #FFD700;
-    color: #4B0082;
+    color: #525c7a; /* Inverted hover colors: gold background and #525c7a text */
     transform: scale(1.05);
 }
 
@@ -149,6 +153,7 @@ nav a:hover {
     text-align: center;
     border: 2px solid #FFD700;
     border-radius: 50%;
+    padding: 10px; /* Added padding for better content alignment */
 }
 
 .member img {
@@ -170,13 +175,10 @@ nav a:hover {
 
 /* Booking Form Section */
 .booking-form {
-    background-image: url('images/form.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 50px;
     text-align: center;
     color: white;
+    background-color: rgba(82, 92, 122, 0.8); /* Add transparency to see background */
 }
 
 .booking-form h1 {
@@ -226,7 +228,7 @@ input, textarea {
 
 /* Footer Design */
 footer {
-    background-color: #525c7a;
+    background-color: rgba(82, 92, 122, 0.8); /* Added transparency to see the background */
     padding: 20px;
     text-align: center;
     color: white;
