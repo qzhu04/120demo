@@ -88,6 +88,13 @@ nav a:hover {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
+.song-list ul li {
+    font-size: 1.2rem;
+    color: #85abab; /* Updated song text color */
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
 /* Gallery Section */
 .gallery-preview {
     padding: 40px;
