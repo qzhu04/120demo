@@ -78,7 +78,7 @@ nav a:hover {
 .hero img {
     width: 300px;
     height: 90px;
-    object-fit: cover;
+    object-fit: cover; /* Make sure the banner fits properly */
     margin: 0 auto;
     display: block;
 }
