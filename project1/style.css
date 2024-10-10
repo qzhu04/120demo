@@ -16,6 +16,31 @@ header {
     padding: 20px;
 }
 
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header img {
+    width: 200px; /* Adjust size if needed */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+}
+
+header h1 {
+    font-family: 'Times New Roman', serif;
+    color: #6A5ACD; /* Soft lavender color to match the logo */
+}
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        text-align: center;
+    }
+}
+
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
