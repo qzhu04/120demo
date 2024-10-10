@@ -189,3 +189,96 @@ input, textarea {
         max-width: 300px;
     }
 }
+/* Style for Main Headline in Hero Section */
+.banner h1 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Button in Hero Section */
+.button {
+    background-color: #4B0082; /* Deep purple */
+    color: #FFD700; /* Gold */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #FFD700; /* Gold */
+    color: #4B0082; /* Deep purple */
+}
+
+/* Footer Design */
+footer {
+    background-color: #525c7a;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* Media Gallery Hover Effect */
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+    .button {
+        font-size: 1rem;
+    }
+    .content {
+        padding: 20px;
+    }
+}
+/* Band Members Section */
+.member-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.member {
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.member h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #FFD700; /* Gold */
+}
+
+.member p {
+    font-size: 1rem;
+    color: white;
+}
