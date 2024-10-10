@@ -69,13 +69,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Hero Section for Home Page */
-.hero img {
-    width: 300px;
-    height: 90px;
-    object-fit: cover;
-}
-
 .hero .hero-text {
     text-align: center;
     margin-top: 20px;
