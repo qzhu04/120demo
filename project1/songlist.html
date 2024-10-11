@@ -6,6 +6,49 @@
     <title>Velvet Harmony - Song List</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Center the content and divide into 6 blocks, 3 per row */
+        .song-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 blocks per row */
+            gap: 30px;
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 1200px; /* Adjust width for the layout */
+            color: #525c7a; /* Update font color */
+        }
+
+        .song-block {
+            background-color: rgba(255, 255, 255, 0.8); /* Add slight transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a raised effect */
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #525c7a; /* Font color for headers */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1rem;
+            color: #525c7a; /* Font color for song names */
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .song-list {
+                grid-template-columns: 1fr; /* Stack blocks on smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -33,91 +76,85 @@
         </div>
     </section>
 
-    <!-- Song Lists by Category -->
+    <!-- Song Lists in 6 blocks -->
     <section class="song-list">
-        <h3>Pop & Top 40 Hits</h3>
-        <ul>
-            <li>Shape of You - Ed Sheeran</li>
-            <li>Uptown Funk - Bruno Mars</li>
-            <li>Perfect - Ed Sheeran</li>
-            <li>Levitating - Dua Lipa</li>
-            <li>Marry You - Bruno Mars</li>
-            <li>Blinding Lights - The Weeknd</li>
-            <li>Senorita - Shawn Mendes & Camila Cabello</li>
-            <li>Shallow - Lady Gaga & Bradley Cooper</li>
-            <li>I Choose You - Sara Bareilles</li>
-            <li>Happy - Pharrell Williams</li>
-        </ul>
+        <!-- Block 1 -->
+        <div class="song-block">
+            <h3>Pop & Top 40 Hits</h3>
+            <ul>
+                <li>Shape of You - Ed Sheeran</li>
+                <li>Uptown Funk - Bruno Mars</li>
+                <li>Perfect - Ed Sheeran</li>
+                <li>Levitating - Dua Lipa</li>
+                <li>Marry You - Bruno Mars</li>
+                <li>Blinding Lights - The Weeknd</li>
+            </ul>
+        </div>
 
-        <h3>Classic Rock</h3>
-        <ul>
-            <li>Bohemian Rhapsody - Queen</li>
-            <li>Sweet Child O' Mine - Guns N' Roses</li>
-            <li>Don't Stop Believin' - Journey</li>
-            <li>Free Bird - Lynyrd Skynyrd</li>
-            <li>Wonderful Tonight - Eric Clapton</li>
-            <li>With or Without You - U2</li>
-            <li>Here Comes the Sun - The Beatles</li>
-            <li>Born to Run - Bruce Springsteen</li>
-            <li>Can't Help Falling in Love - Elvis Presley</li>
-            <li>Hotel California - Eagles</li>
-        </ul>
+        <!-- Block 2 -->
+        <div class="song-block">
+            <h3>Classic Rock</h3>
+            <ul>
+                <li>Bohemian Rhapsody - Queen</li>
+                <li>Sweet Child O' Mine - Guns N' Roses</li>
+                <li>Don't Stop Believin' - Journey</li>
+                <li>Free Bird - Lynyrd Skynyrd</li>
+                <li>Wonderful Tonight - Eric Clapton</li>
+                <li>With or Without You - U2</li>
+            </ul>
+        </div>
 
-        <h3>Motown & Soul</h3>
-        <ul>
-            <li>Superstition - Stevie Wonder</li>
-            <li>Respect - Aretha Franklin</li>
-            <li>My Girl - The Temptations</li>
-            <li>Stand by Me - Ben E. King</li>
-            <li>For Once in My Life - Stevie Wonder</li>
-            <li>Ain't No Mountain High Enough - Marvin Gaye & Tammi Terrell</li>
-            <li>Signed, Sealed, Delivered - Stevie Wonder</li>
-            <li>Let's Stay Together - Al Green</li>
-            <li>How Sweet It Is - Marvin Gaye</li>
-            <li>I Heard It Through the Grapevine - Marvin Gaye</li>
-        </ul>
+        <!-- Block 3 -->
+        <div class="song-block">
+            <h3>Motown & Soul</h3>
+            <ul>
+                <li>Superstition - Stevie Wonder</li>
+                <li>Respect - Aretha Franklin</li>
+                <li>My Girl - The Temptations</li>
+                <li>Stand by Me - Ben E. King</li>
+                <li>Ain't No Mountain High Enough - Marvin Gaye</li>
+                <li>Let's Stay Together - Al Green</li>
+            </ul>
+        </div>
 
-        <h3>Jazz Standards</h3>
-        <ul>
-            <li>What a Wonderful World - Louis Armstrong</li>
-            <li>At Last - Etta James</li>
-            <li>Fly Me to the Moon - Frank Sinatra</li>
-            <li>The Way You Look Tonight - Frank Sinatra</li>
-            <li>Unforgettable - Nat King Cole</li>
-            <li>Summertime - Ella Fitzgerald</li>
-            <li>Dream a Little Dream of Me - Ella Fitzgerald</li>
-            <li>My Funny Valentine - Chet Baker</li>
-            <li>Come Fly with Me - Frank Sinatra</li>
-            <li>Misty - Ella Fitzgerald</li>
-        </ul>
+        <!-- Block 4 -->
+        <div class="song-block">
+            <h3>Jazz Standards</h3>
+            <ul>
+                <li>What a Wonderful World - Louis Armstrong</li>
+                <li>At Last - Etta James</li>
+                <li>Fly Me to the Moon - Frank Sinatra</li>
+                <li>Unforgettable - Nat King Cole</li>
+                <li>Summertime - Ella Fitzgerald</li>
+                <li>Dream a Little Dream of Me - Ella Fitzgerald</li>
+            </ul>
+        </div>
 
-        <h3>Dance & Party Hits</h3>
-        <ul>
-            <li>I Wanna Dance with Somebody - Whitney Houston</li>
-            <li>Shut Up and Dance - WALK THE MOON</li>
-            <li>Don't Stop the Music - Rihanna</li>
-            <li>24K Magic - Bruno Mars</li>
-            <li>We Found Love - Rihanna</li>
-            <li>Party Rock Anthem - LMFAO</li>
-            <li>Single Ladies - Beyoncé</li>
-            <li>Hey Ya! - OutKast</li>
-            <li>Happy - Pharrell Williams</li>
-            <li>Can't Stop the Feeling - Justin Timberlake</li>
-        </ul>
+        <!-- Block 5 -->
+        <div class="song-block">
+            <h3>Dance & Party Hits</h3>
+            <ul>
+                <li>I Wanna Dance with Somebody - Whitney Houston</li>
+                <li>Shut Up and Dance - WALK THE MOON</li>
+                <li>Don't Stop the Music - Rihanna</li>
+                <li>24K Magic - Bruno Mars</li>
+                <li>We Found Love - Rihanna</li>
+                <li>Party Rock Anthem - LMFAO</li>
+            </ul>
+        </div>
 
-        <h3>Romantic Ballads</h3>
-        <ul>
-            <li>Thinking Out Loud - Ed Sheeran</li>
-            <li>A Thousand Years - Christina Perri</li>
-            <li>Perfect - Ed Sheeran</li>
-            <li>I Will Always Love You - Whitney Houston</li>
-            <li>Unchained Melody - The Righteous Brothers</li>
-            <li>All of Me - John Legend</li>
-            <li>Wonderful Tonight - Eric Clapton</li>
-            <li>Make You Feel My Love - Adele</li>
-            <li>At Last - Etta James</li>
-            <li>Endless Love - Lionel Richie & Diana Ross</li>
-        </ul>
+        <!-- Block 6 -->
+        <div class="song-block">
+            <h3>Romantic Ballads</h3>
+            <ul>
+                <li>Thinking Out Loud - Ed Sheeran</li>
+                <li>A Thousand Years - Christina Perri</li>
+                <li>Perfect - Ed Sheeran</li>
+                <li>I Will Always Love You - Whitney Houston</li>
+                <li>All of Me - John Legend</li>
+                <li>Make You Feel My Love - Adele</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Footer Section -->
