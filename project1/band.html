@@ -6,6 +6,54 @@
     <title>Velvet Harmony - Band Members</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Responsive adjustments for mobile screens */
+        @media (max-width: 768px) {
+            .member-container {
+                grid-template-columns: 1fr; /* Stack the columns on smaller screens */
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .menu {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            .menu a {
+                margin-bottom: 10px;
+            }
+            .cta-button {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, h2 {
+                font-size: 1.5rem; /* Adjust headings for smaller screens */
+            }
+            p {
+                font-size: 1rem; /* Adjust paragraph text for readability on smaller devices */
+            }
+            .cta-button {
+                padding: 8px 16px; /* Reduce padding for smaller screens */
+                font-size: 0.9rem;
+            }
+        }
+
+        .bio-block {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .bio-block p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: white;
+        }
+    </style>
 </head>
 <body style="background-color: #667399; color: white; font-family: 'Playfair Display', serif;">
 
@@ -31,14 +79,28 @@
     <div class="content" style="padding: 40px; text-align: center;">
         <h1 style="color: #FFD700; text-transform: uppercase;">Meet Velvet Harmony</h1>
 
-        <!-- Band Bio Text -->
-        <p class="band-bio" style="color: white; font-size: 1.2rem;">
-            Velvet Harmony brings over a decade of musical expertise to the stage, captivating audiences with their unique blend of genres. Whether performing for weddings, corporate events, or private parties, the band is known for delivering unforgettable live performances. With a passion for music and a commitment to professionalism, Velvet Harmony guarantees to bring energy, emotion, and precision to every event. Our team of seasoned musicians offers the perfect soundtrack to make your special day extraordinary. From jazz to pop and everything in between, Velvet Harmony knows how to create the perfect atmosphere.
-        </p>
+        <!-- Bio Block -->
+        <div class="bio-block">
+            <p>
+                Velvet Harmony brings over a decade of musical expertise to the stage,
+                captivating audiences with their unique blend of genres.
+                Whether performing for weddings, corporate events, or private parties,
+                the band is known for delivering unforgettable live performances.
+            </p>
+            <p>
+                With a passion for music and a commitment to professionalism,
+                Velvet Harmony guarantees to bring energy, emotion, and precision to every event.
+                Our team of seasoned musicians offers the perfect soundtrack
+                to make your special day extraordinary.
+            </p>
+            <p>
+                From jazz to pop and everything in between,
+                Velvet Harmony knows how to create the perfect atmosphere.
+            </p>
+        </div>
 
         <!-- Band Members Section -->
         <div class="member-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;">
-            
             <!-- Member 1 -->
             <div class="member" style="text-align: center;">
                 <div style="border: 3px solid #FFD700; border-radius: 50%; padding: 10px; display: inline-block;">
@@ -46,7 +108,7 @@
                 </div>
                 <h2 style="color: #FFD700;">Emma Westwood</h2>
                 <p style="color: white;">Lead Vocalist</p>
-                <p style="color: lightgray;">Emma Westwood is the lead vocalist of Velvet Harmony and the voice that defines the band’s signature sound. With over 12 years of experience in live performance, Emma's captivating voice brings every song to life. A seasoned professional with roots in both jazz and contemporary pop, Emma has performed at over 100 weddings and high-profile events. Her ability to connect with audiences and deliver powerful, emotive performances ensures that every guest is enchanted from the very first note to the last encore.</p>
+                <p style="color: lightgray;">Emma is the lead vocalist, captivating audiences with her vibrant performances.</p>
             </div>
 
             <!-- Member 2 -->
@@ -56,7 +118,7 @@
                 </div>
                 <h2 style="color: #FFD700;">Jason Hart</h2>
                 <p style="color: white;">Guitarist & Backup Vocalist</p>
-                <p style="color: lightgray;">Jason Hart is Velvet Harmony’s versatile guitarist and backup vocalist, known for his technical skill and charismatic stage presence. With over 15 years of experience in live bands, Jason has mastered a variety of genres from classic rock to smooth jazz. His ability to seamlessly switch between acoustic and electric guitar allows the band to cover a wide range of musical styles, adding depth and dimension to the band’s live performances. Jason’s harmonies complement Emma’s lead vocals, creating rich, full-bodied soundscapes that captivate audiences.</p>
+                <p style="color: lightgray;">Jason’s skills on guitar bring depth and diversity to Velvet Harmony’s sound.</p>
             </div>
 
             <!-- Member 3 -->
@@ -66,7 +128,7 @@
                 </div>
                 <h2 style="color: #FFD700;">James Cooper</h2>
                 <p style="color: white;">Jazz Pianist</p>
-                <p style="color: lightgray;">James Cooper is an internationally recognized jazz pianist, known for his sophisticated playing style that blends modern harmonies with classic jazz melodies. Over the past decade, James has performed at major jazz festivals and luxury events around the globe. His improvisational skills and deep musicality add a layer of elegance to Velvet Harmony’s sound, making each performance unique. Whether it’s a slow ballad or an upbeat number, James’ dynamic piano skills ensure that the music leaves a lasting impression.</p>
+                <p style="color: lightgray;">James adds elegance and dynamic energy with his sophisticated jazz improvisations.</p>
             </div>
 
             <!-- Member 4 -->
@@ -76,15 +138,14 @@
                 </div>
                 <h2 style="color: #FFD700;">Mike Taylor</h2>
                 <p style="color: white;">Jazz Drummer</p>
-                <p style="color: lightgray;">Mike Taylor is Velvet Harmony’s highly skilled jazz drummer with over 20 years of experience in live performances. His diverse background includes playing with some of the most prestigious jazz ensembles in the country. Mike’s ability to create complex rhythms and adapt to any musical style ensures that the band’s sound remains fresh and exciting. Known for his impeccable timing and improvisational flair, Mike provides the rhythmic foundation that keeps Velvet Harmony’s performances tight and energetic.</p>
+                <p style="color: lightgray;">Mike keeps the rhythm alive, delivering beats that energize every performance.</p>
             </div>
-
         </div>
     </div>
 
     <!-- Footer -->
     <footer style="background-color: #525c7a; padding: 40px; text-align: center;">
-        <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div class="footer-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
             <!-- Quick Links -->
             <div class="quick-links">
                 <h3 style="color: #FFD700;">Quick Links</h3>
@@ -105,25 +166,6 @@
                 <a href="https://twitter.com" target="_blank">
                     <img src="images/twitter.jpg" alt="Twitter" style="width: 40px; height: 40px; margin: 5px;">
                 </a>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h3 style="color: #FFD700;">Contact Information</h3>
-                <p style="color: white;">Band Manager: Sophia Green</p>
-                <p style="color: white;">Email: <a href="mailto:sophia@velvetharmony.com" style="color: #FFD700;">sophia@velvetharmony.com</a></p>
-                <p style="color: white;">Phone: (555) 987-6543</p>
-                <p style="color: white;">Address: 123 Harmony Ave, Music City, USA</p>
-            </div>
-
-            <!-- Newsletter Signup -->
-            <div class="newsletter">
-                <h3 style="color: #FFD700;">Newsletter Signup</h3>
-                <p style="color: white;">Stay up to date with Velvet Harmony!</p>
-                <form>
-                    <input type="email" placeholder="Enter your email" style="padding: 10px; width: 200px; border: none; border-radius: 5px;" required>
-                    <button type="submit" class="cta-button" style="background-color: #4B0082; color: #FFD700; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign Up</button>
-                </form>
             </div>
         </div>
         <p style="color: white;">© 2024 Velvet Harmony. All rights reserved.</p>
