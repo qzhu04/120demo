@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button type="button" onclick="speak('Hello')">Hello</button>
+        <button type="button" onclick="speak('Goodbye')">Goodbye</button>
+        <button type="button" onclick="speak('Greetings')">Greetings</button>
+    </form>
+
+    <script>
+        function speak(prefix) {
+            let name = document.getElementById("username").value;
+            alert(prefix + " " + name);
+        }
+    </script>
+</body>
+</html>
