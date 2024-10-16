@@ -9,7 +9,7 @@
     <ul id="nameList"></ul>
 
     <script>
-        let names = "Emily,Johnson,Michael,Smith,Olivia,Williams,James,Brown,Sophia,Garcia"
+        let names = "Emily, Johnson, Michael, Smith, Olivia, Williams, James, Brown, Sophia, Garcia"
         let nameArray = names.split(", ");
         document.getElementById("nameList").innerHTML = nameArray.map((name, index) => `<li>${index + 1}. ${name}</li>`).join("");
     </script>
