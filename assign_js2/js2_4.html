@@ -8,7 +8,7 @@
 <body>
     <form>
         <input type="text" id="username" placeholder="Enter your name">
-        <!-- No onclick event here, event handlers are set in window.onload -->
+        <!-- No onclick event handlers in the HTML -->
         <button type="button" id="helloBtn">Hello</button>
         <button type="button" id="goodbyeBtn">Good Bye</button>
         <button type="button" id="greetingsBtn">Greetings</button>
@@ -17,12 +17,12 @@
     <script>
         function speak() {
             let name = document.getElementById("username").value;
-            let prefix = this.innerHTML;  // Get the button's text
+            let prefix = this.innerHTML;  // Get the clicked button's text
             alert(prefix + " " + name);
         }
 
         window.onload = function() {
-            // Assign event handlers to buttons using their ID
+            // Assign event handlers using JavaScript
             document.getElementById("helloBtn").onclick = speak;
             document.getElementById("goodbyeBtn").onclick = speak;
             document.getElementById("greetingsBtn").onclick = speak;
