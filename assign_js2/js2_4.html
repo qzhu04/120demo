@@ -8,8 +8,9 @@
 <body>
     <form>
         <input type="text" id="username" placeholder="Enter your name">
+        <!-- No onclick event here, event handlers are set in window.onload -->
         <button type="button" id="helloBtn">Hello</button>
-        <button type="button" id="goodbyeBtn">Goodbye</button>
+        <button type="button" id="goodbyeBtn">Good Bye</button>
         <button type="button" id="greetingsBtn">Greetings</button>
     </form>
 
@@ -21,6 +22,7 @@
         }
 
         window.onload = function() {
+            // Assign event handlers to buttons using their ID
             document.getElementById("helloBtn").onclick = speak;
             document.getElementById("goodbyeBtn").onclick = speak;
             document.getElementById("greetingsBtn").onclick = speak;
