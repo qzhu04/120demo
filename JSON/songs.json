@@ -1,0 +1,12 @@
+[
+    { "title": "Bohemian Rhapsody", "artist": "Queen", "year": 1975, "genres": ["rock"] },
+    { "title": "Like a Prayer", "artist": "Madonna", "year": 1989, "genres": ["pop", "rock"] },
+    { "title": "Billie Jean", "artist": "Michael Jackson", "year": 1983, "genres": ["pop", "disco"] },
+    { "title": "Hotel California", "artist": "Eagles", "year": 1977, "genres": ["rock"] },
+    { "title": "Shape of You", "artist": "Ed Sheeran", "year": 2017, "genres": ["pop"] },
+    { "title": "Uptown Funk", "artist": "Mark Ronson ft. Bruno Mars", "year": 2014, "genres": ["pop", "disco"] },
+    { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "year": 1991, "genres": ["rock"] },
+    { "title": "Rolling in the Deep", "artist": "Adele", "year": 2010, "genres": ["pop"] },
+    { "title": "Blinding Lights", "artist": "The Weeknd", "year": 2019, "genres": ["pop", "disco"] },
+    { "title": "Imagine", "artist": "John Lennon", "year": 1971, "genres": ["rock", "pop"] }
+]
