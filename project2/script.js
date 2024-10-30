@@ -26,26 +26,32 @@ for (let i = 0; i < maxAttempts * 5; i++) {
 document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
-    
+
+    // Validate input length and if it's a valid word in the word list
     if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
+        guessInput.value = ""; // Clear input if invalid
         return;
     }
 
-    verifyWordWithAPI(guess); // Validate with API
-    guessInput.value = ""; // Clear input field
+    // Verify the word's validity using the API
+    verifyWordWithAPI(guess);
 });
 
 function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // Valid word
+                checkGuess(word); // If the word is valid, proceed with guessing logic
             } else {
                 alert("Invalid word! Please try another word.");
+                document.getElementById("guess-input").value = ""; // Clear input if the word is invalid
             }
         })
-        .catch(error => console.error("Error verifying word:", error));
+        .catch(error => {
+            console.error("Error verifying word:", error);
+            alert("Error connecting to dictionary. Please try again.");
+        });
 }
 
 function checkGuess(guess) {
@@ -53,6 +59,7 @@ function checkGuess(guess) {
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
+    // Process each letter and update cell colors
     guessArray.forEach((letter, index) => {
         const cell = gameBoard.children[rowStart + index];
         cell.textContent = letter;
@@ -69,6 +76,7 @@ function checkGuess(guess) {
         }
     });
 
+    // Check if the guess was correct
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
         document.getElementById("restart-game").style.display = "block";
@@ -77,36 +85,17 @@ function checkGuess(guess) {
         document.getElementById("restart-game").style.display = "block";
     }
 
+    // Move to the next row for the next guess
     currentRow++;
 }
 
-document.getElementById("submit-guess").addEventListener("click", () => {
-    const guessInput = document.getElementById("guess-input");
-    const guess = guessInput.value.toLowerCase();
-
-    // Check for correct length first, don't clear input if invalid length
-    if (guess.length !== 5) {
-        alert("Please enter a valid 5-letter word.");
-        return;
+// Function to update the used letters visually
+function updateUsedLetters(letter, status) {
+    if (!usedLetters.has(letter)) {
+        const usedLetterDiv = document.createElement("div");
+        usedLetterDiv.textContent = letter;
+        usedLetterDiv.classList.add(status);
+        document.getElementById("used-letters").appendChild(usedLetterDiv);
+        usedLetters.add(letter);
     }
-
-    // Verify the word using the API
-    verifyWordWithAPI(guess);
-});
-
-function verifyWordWithAPI(word) {
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-        .then(response => {
-            if (response.ok) {
-                checkGuess(word); // If the word exists, proceed to check guess
-                document.getElementById("guess-input").value = ""; // Clear input for valid words
-            } else {
-                alert("Invalid word! Please try another word.");
-                document.getElementById("guess-input").value = ""; // Clear input for invalid words
-            }
-        })
-        .catch(error => {
-            console.error("Error verifying word:", error);
-            alert("Error connecting to dictionary. Please try again.");
-        });
 }
