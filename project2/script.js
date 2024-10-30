@@ -84,9 +84,7 @@ document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
 
-    // Clear input in any case
-    guessInput.value = "";
-
+    // Check for correct length first, don't clear input if invalid length
     if (guess.length !== 5) {
         alert("Please enter a valid 5-letter word.");
         return;
@@ -101,10 +99,14 @@ function verifyWordWithAPI(word) {
         .then(response => {
             if (response.ok) {
                 checkGuess(word); // If the word exists, proceed to check guess
+                document.getElementById("guess-input").value = ""; // Clear input for valid words
             } else {
                 alert("Invalid word! Please try another word.");
-                // Keep input empty and stay in the same row
+                document.getElementById("guess-input").value = ""; // Clear input for invalid words
             }
         })
-        .catch(error => console.error("Error verifying word:", error));
+        .catch(error => {
+            console.error("Error verifying word:", error);
+            alert("Error connecting to dictionary. Please try again.");
+        });
 }
