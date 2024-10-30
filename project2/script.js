@@ -27,10 +27,13 @@ document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
 
+    // Clear the input box immediately to prevent issues with displaying old input
+    guessInput.value = "";
+
     // Validate input length and if it's a valid word in the word list
     if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
-        guessInput.value = ""; // Clear input if invalid
+        console.log("Invalid guess input cleared:", guessInput.value); // Debugging statement
         return;
     }
 
@@ -46,11 +49,13 @@ function verifyWordWithAPI(word) {
             } else {
                 alert("Invalid word! Please try another word.");
                 document.getElementById("guess-input").value = ""; // Clear input if the word is invalid
+                console.log("Invalid API response, input cleared."); // Debugging statement
             }
         })
         .catch(error => {
             console.error("Error verifying word:", error);
             alert("Error connecting to dictionary. Please try again.");
+            document.getElementById("guess-input").value = ""; // Clear input on error
         });
 }
 
