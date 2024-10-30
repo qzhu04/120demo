@@ -42,3 +42,20 @@ body {
     font-size: 18px;
     padding: 5px;
 }
+
+@media (max-width: 600px) {
+    #game-board {
+        grid-template-columns: repeat(5, 40px);
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #guess-input {
+        width: 80%;
+    }
+}
+
