@@ -22,11 +22,12 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
+// Single event listener for submitting guesses
 document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
 
-    // Clear input immediately after submission attempt
+    // Clear input immediately after checking
     guessInput.value = "";
 
     // Check if the input is valid
@@ -77,41 +78,24 @@ function checkGuess(guess) {
 
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
-        document.getElementById("restart-game").style.display = "block";
+        document.getElementById("restart-game").style.display = "block"; // Show restart button on success
     } else if (currentRow === maxAttempts - 1) {
         alert(`Game over! The word was ${answer}`);
-        document.getElementById("restart-game").style.display = "block";
+        document.getElementById("restart-game").style.display = "block"; // Show restart button on game over
     }
-    
-    function updateUsedLetters(letter, status) {
-        if (!usedLetters.has(letter)) {
-            const usedLetterDiv = document.createElement("div");
-            usedLetterDiv.textContent = letter;
-            usedLetterDiv.classList.add(status);
-            document.getElementById("used-letters").appendChild(usedLetterDiv);
-            usedLetters.add(letter);
-        }
-    }
-    
+
     currentRow++;
 }
 
-// Restart game logic
-document.getElementById("restart-game").addEventListener("click", () => {
-    currentRow = 0;
-    answer = words[Math.floor(Math.random() * words.length)];
-    console.log("New Answer:", answer); // For debugging
-    usedLetters.clear();
+function updateUsedLetters(letter, status) {
+    if (!usedLetters.has(letter)) {
+        const usedLetterDiv = document.createElement("div");
+        usedLetterDiv.textContent = letter;
+        usedLetterDiv.classList.add(status);
+        document.getElementById("used-letters").appendChild(usedLetterDiv);
+        usedLetters.add(letter);
+    }
+}
 
-    // Clear the game board
-    Array.from(gameBoard.children).forEach(cell => {
-        cell.textContent = "";
-        cell.classList.remove("correct", "wrong-place", "not-in-word");
-    });
-
-    // Clear used letters display
-    document.getElementById("used-letters").innerHTML = "";
-
-    // Hide restart button
-    document.getElementById("restart-game").style.display = "none";
-});
+// Hide the restart button when the game starts
+document.getElementById("restart-game").style.display = "none";
