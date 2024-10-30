@@ -22,7 +22,6 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
-// Handle guess submission
 document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
@@ -83,35 +82,36 @@ function checkGuess(guess) {
         alert(`Game over! The word was ${answer}`);
         document.getElementById("restart-game").style.display = "block";
     }
-
+    
+    function updateUsedLetters(letter, status) {
+        if (!usedLetters.has(letter)) {
+            const usedLetterDiv = document.createElement("div");
+            usedLetterDiv.textContent = letter;
+            usedLetterDiv.classList.add(status);
+            document.getElementById("used-letters").appendChild(usedLetterDiv);
+            usedLetters.add(letter);
+        }
+    }
+    
     currentRow++;
 }
 
-// Function to update used letters
-function updateUsedLetters(letter, status) {
-    if (!usedLetters.has(letter)) {
-        const usedLetterDiv = document.createElement("div");
-        usedLetterDiv.textContent = letter;
-        usedLetterDiv.classList.add(status);
-        document.getElementById("used-letters").appendChild(usedLetterDiv);
-        usedLetters.add(letter);
-    }
-}
-
-// Restart Game Logic
+// Restart game logic
 document.getElementById("restart-game").addEventListener("click", () => {
     currentRow = 0;
     answer = words[Math.floor(Math.random() * words.length)];
     console.log("New Answer:", answer); // For debugging
+    usedLetters.clear();
 
-    // Clear game board cells
+    // Clear the game board
     Array.from(gameBoard.children).forEach(cell => {
         cell.textContent = "";
         cell.classList.remove("correct", "wrong-place", "not-in-word");
     });
 
-    // Clear used letters
+    // Clear used letters display
     document.getElementById("used-letters").innerHTML = "";
-    usedLetters.clear();
+
+    // Hide restart button
     document.getElementById("restart-game").style.display = "none";
 });
