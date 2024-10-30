@@ -1,21 +1,20 @@
 let words = [];
 let answer = "";
+let currentRow = 0;
+const maxAttempts = 6;
+const usedLetters = new Set();
 
 // Fetch words from proj2.json
 fetch('proj2.json')
     .then(response => response.json())
     .then(data => {
         words = data.words;
-        // Select a random word as the answer for this game
         answer = words[Math.floor(Math.random() * words.length)];
         console.log("Answer:", answer); // For debugging
     })
     .catch(error => console.error("Error loading words:", error));
 
-let currentRow = 0;
-let currentGuess = "";
-const maxAttempts = 6;
-
+// Set up the game board
 const gameBoard = document.getElementById("game-board");
 for (let i = 0; i < maxAttempts * 5; i++) {
     const cell = document.createElement("div");
@@ -23,40 +22,53 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
+// Event listener for submit guess button
 document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
-    if (guess.length !== 5 || !words.includes(guess)) {
+
+    if (guess.length !== 5) {
         alert("Please enter a valid 5-letter word.");
         return;
     }
-    guessInput.value = "";
-    checkGuess(guess);
+    guessInput.value = ""; // Clear the input box
+    verifyWordWithAPI(guess); // Validate with API
 });
 
+// Verify word with API and call checkGuess if valid
 function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.title === "No Definitions Found") {
-                alert("Invalid word! Please try another word.");
+        .then(response => {
+            if (response.ok) {
+                checkGuess(word); // Call checkGuess if word is valid
             } else {
-                checkGuess(word); // Call checkGuess if the word is valid
+                alert("Invalid word! Please try another word.");
             }
         })
         .catch(error => console.error("Error verifying word:", error));
 }
 
-document.getElementById("submit-guess").addEventListener("click", () => {
-    const guessInput = document.getElementById("guess-input");
-    const guess = guessInput.value.toLowerCase();
-    if (guess.length !== 5) {
-        alert("Please enter a valid 5-letter word.");
-        return;
-    }
-    guessInput.value = "";
-    verifyWordWithAPI(guess); // Use the API check here
-});
+// Check each guess
+function checkGuess(guess) {
+    const guessArray = guess.split("");
+    const answerArray = answer.split("");
+    const rowStart = currentRow * 5;
+
+    guessArray.forEach((letter, index) => {
+        const cell = gameBoard.children[rowStart + index];
+        cell.textContent = letter;
+
+        if (letter === answerArray[index]) {
+            cell.classList.add("correct");
+            updateUsedLetters(letter, "correct");
+        } else if (answerArray.includes(letter)) {
+            cell.classList.add("wrong-place");
+            updateUsedLetters(letter, "wrong-place");
+        } else {
+            cell.classList.add("not-in-word");
+            updateUsedLetters(letter, "not-in-word");
+        }
+    });
 
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
@@ -69,6 +81,7 @@ document.getElementById("submit-guess").addEventListener("click", () => {
     currentRow++;
 }
 
+// Restart game
 document.getElementById("restart-game").addEventListener("click", () => {
     currentRow = 0;
     answer = words[Math.floor(Math.random() * words.length)];
@@ -84,7 +97,8 @@ document.getElementById("restart-game").addEventListener("click", () => {
     document.getElementById("restart-game").style.display = "none";
 });
 
-const updateUsedLetters = (letter, status) => {
+// Update used letters
+function updateUsedLetters(letter, status) {
     if (!usedLetters.has(letter)) {
         const usedLetterDiv = document.createElement("div");
         usedLetterDiv.textContent = letter;
@@ -92,4 +106,4 @@ const updateUsedLetters = (letter, status) => {
         document.getElementById("used-letters").appendChild(usedLetterDiv);
         usedLetters.add(letter);
     }
-};
+}
