@@ -3,6 +3,7 @@ let answer = "";
 let currentRow = 0;
 const maxAttempts = 6;
 const usedLetters = new Set();
+let gameOver = false;  // New flag to track game status
 
 // Fetch words from proj2.json
 fetch('proj2.json')
@@ -22,21 +23,20 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
-// Single event listener for submitting guesses
+// Event listener for submitting guesses
 document.getElementById("submit-guess").addEventListener("click", () => {
+    if (gameOver) return;  // Stop processing if the game is over
+
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
+    guessInput.value = "";  // Clear input immediately
 
-    // Clear input immediately after checking
-    guessInput.value = "";
-
-    // Check if the input is valid
     if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
         return;
     }
 
-    // If valid, verify with the API
+    // Verify word with the API if the game is still active
     verifyWordWithAPI(guess);
 });
 
@@ -44,7 +44,7 @@ function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // If the word is valid, proceed to guessing
+                checkGuess(word); // Proceed to guessing if the word is valid
             } else {
                 alert("Invalid word! Please try another word.");
             }
@@ -76,12 +76,15 @@ function checkGuess(guess) {
         }
     });
 
+    // Check if the guess is correct
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
-        document.getElementById("restart-game").style.display = "block"; // Show restart button on success
+        gameOver = true;  // Set game over flag
+        document.getElementById("restart-game").style.display = "block"; // Show restart button
     } else if (currentRow === maxAttempts - 1) {
         alert(`Game over! The word was ${answer}`);
-        document.getElementById("restart-game").style.display = "block"; // Show restart button on game over
+        gameOver = true;  // Set game over flag
+        document.getElementById("restart-game").style.display = "block"; // Show restart button
     }
 
     currentRow++;
