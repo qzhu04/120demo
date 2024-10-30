@@ -14,7 +14,7 @@ fetch('proj2.json')
     })
     .catch(error => console.error("Error loading words:", error));
 
-// Set up the game board
+// Create game board cells
 const gameBoard = document.getElementById("game-board");
 for (let i = 0; i < maxAttempts * 5; i++) {
     const cell = document.createElement("div");
@@ -22,25 +22,25 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
-// Event listener for submit guess button
+// Add submit button event listener
 document.getElementById("submit-guess").addEventListener("click", () => {
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
-
-    if (guess.length !== 5) {
+    
+    if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
         return;
     }
-    guessInput.value = ""; // Clear the input box
+
     verifyWordWithAPI(guess); // Validate with API
+    guessInput.value = ""; // Clear input field
 });
 
-// Verify word with API and call checkGuess if valid
 function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // Call checkGuess if word is valid
+                checkGuess(word); // Valid word
             } else {
                 alert("Invalid word! Please try another word.");
             }
@@ -48,7 +48,6 @@ function verifyWordWithAPI(word) {
         .catch(error => console.error("Error verifying word:", error));
 }
 
-// Check each guess
 function checkGuess(guess) {
     const guessArray = guess.split("");
     const answerArray = answer.split("");
@@ -81,7 +80,6 @@ function checkGuess(guess) {
     currentRow++;
 }
 
-// Restart game
 document.getElementById("restart-game").addEventListener("click", () => {
     currentRow = 0;
     answer = words[Math.floor(Math.random() * words.length)];
@@ -92,12 +90,11 @@ document.getElementById("restart-game").addEventListener("click", () => {
         cell.classList.remove("correct", "wrong-place", "not-in-word");
     });
 
-    document.getElementById("used-letters").innerHTML = ""; // Clear used letters board
-    usedLetters.clear(); // Clear the set of used letters
+    document.getElementById("used-letters").innerHTML = ""; 
+    usedLetters.clear();
     document.getElementById("restart-game").style.display = "none";
 });
 
-// Update used letters
 function updateUsedLetters(letter, status) {
     if (!usedLetters.has(letter)) {
         const usedLetterDiv = document.createElement("div");
