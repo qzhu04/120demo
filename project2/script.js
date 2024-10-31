@@ -62,6 +62,11 @@ function checkGuess(guess) {
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
+    // Initialize arrays to mark used letters for yellow color logic
+    let answerUsed = Array(answerArray.length).fill(false);
+    let guessUsed = Array(guessArray.length).fill(false);
+
+    // First pass: Check for exact matches
     guessArray.forEach((letter, index) => {
         const cell = gameBoard.children[rowStart + index];
         cell.textContent = letter;
@@ -69,12 +74,34 @@ function checkGuess(guess) {
         if (letter === answerArray[index]) {
             cell.classList.add("correct");
             updateUsedLetters(letter, "correct");
-        } else if (answerArray.includes(letter)) {
-            cell.classList.add("wrong-place");
-            updateUsedLetters(letter, "wrong-place");
-        } else {
-            cell.classList.add("not-in-word");
-            updateUsedLetters(letter, "not-in-word");
+            guessUsed[index] = true;
+            answerUsed[index] = true;
+        }
+    });
+
+    // Second pass: Check for wrong-place letters
+    guessArray.forEach((letter, index) => {
+        if (!guessUsed[index]) {
+            const cell = gameBoard.children[rowStart + index];
+
+            if (answerArray.includes(letter)) {
+                // Find a position where the letter is unused in the answer
+                const answerIndex = answerArray.findIndex(
+                    (ansLetter, ansIndex) => ansLetter === letter && !answerUsed[ansIndex]
+                );
+                
+                if (answerIndex !== -1) {
+                    cell.classList.add("wrong-place");
+                    updateUsedLetters(letter, "wrong-place");
+                    answerUsed[answerIndex] = true;
+                } else {
+                    cell.classList.add("not-in-word");
+                    updateUsedLetters(letter, "not-in-word");
+                }
+            } else {
+                cell.classList.add("not-in-word");
+                updateUsedLetters(letter, "not-in-word");
+            }
         }
     });
 
@@ -92,6 +119,7 @@ function checkGuess(guess) {
 
     currentRow++;
 }
+
 
 function updateUsedLetters(letter, status) {
     if (!usedLetters.has(letter)) {
