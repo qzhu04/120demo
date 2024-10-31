@@ -20,6 +20,7 @@ const gameBoard = document.getElementById("game-board");
 for (let i = 0; i < maxAttempts * 5; i++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
+    cell.style.color = "black"; // Set font color to black
     gameBoard.appendChild(cell);
 }
 
@@ -60,10 +61,11 @@ function checkGuess(guess) {
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
-    // First, clear existing colors to avoid layering issues
+    // First, clear existing colors and ensure black font
     for (let i = 0; i < 5; i++) {
         const cell = gameBoard.children[rowStart + i];
-        cell.className = 'cell';  // Reset class to only 'cell' before applying new styles
+        cell.className = 'cell'; // Reset class to only 'cell' before applying new styles
+        cell.style.color = "black"; // Make font color black
         cell.textContent = guessArray[i];  // Display each letter in its respective cell
     }
 
@@ -130,6 +132,7 @@ document.getElementById("restart-game").addEventListener("click", () => {
     for (let i = 0; i < maxAttempts * 5; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
+        cell.style.color = "black"; // Set font color to black on reset
         gameBoard.appendChild(cell);
     }
 
