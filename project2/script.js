@@ -3,7 +3,6 @@ let answer = "";
 let currentRow = 0;
 const maxAttempts = 6;
 const usedLetters = new Set();
-let gameOver = false;  // New flag to track game status
 
 // Fetch words from proj2.json
 fetch('proj2.json')
@@ -23,20 +22,20 @@ for (let i = 0; i < maxAttempts * 5; i++) {
     gameBoard.appendChild(cell);
 }
 
-// Event listener for submitting guesses
+// Handle guess submission
 document.getElementById("submit-guess").addEventListener("click", () => {
-    if (gameOver) return;  // Stop processing if the game is over
-
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
-    guessInput.value = "";  // Clear input immediately
+    guessInput.value = ""; // Clear input immediately after submission
 
+    // Check if the input is valid
     if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
+        guessInput.focus();
         return;
     }
 
-    // Verify word with the API if the game is still active
+    // Verify word with the dictionary API
     verifyWordWithAPI(guess);
 });
 
@@ -44,7 +43,7 @@ function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // Proceed to guessing if the word is valid
+                checkGuess(word); // If valid, proceed with guess check
             } else {
                 alert("Invalid word! Please try another word.");
             }
@@ -76,15 +75,14 @@ function checkGuess(guess) {
         }
     });
 
-    // Check if the guess is correct
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
-        gameOver = true;  // Set game over flag
-        document.getElementById("restart-game").style.display = "block"; // Show restart button
+        updateAverageGuesses();
+        document.getElementById("restart-game").style.display = "block";
     } else if (currentRow === maxAttempts - 1) {
         alert(`Game over! The word was ${answer}`);
-        gameOver = true;  // Set game over flag
-        document.getElementById("restart-game").style.display = "block"; // Show restart button
+        updateAverageGuesses();
+        document.getElementById("restart-game").style.display = "block";
     }
 
     currentRow++;
@@ -100,5 +98,34 @@ function updateUsedLetters(letter, status) {
     }
 }
 
-// Hide the restart button when the game starts
-document.getElementById("restart-game").style.display = "none";
+function updateAverageGuesses() {
+    let totalGames = parseInt(localStorage.getItem("totalGames") || "0");
+    let totalGuesses = parseInt(localStorage.getItem("totalGuesses") || "0");
+
+    totalGames++;
+    totalGuesses += currentRow + 1;
+
+    localStorage.setItem("totalGames", totalGames);
+    localStorage.setItem("totalGuesses", totalGuesses);
+
+    const averageGuesses = (totalGuesses / totalGames).toFixed(2);
+    document.getElementById("average-guesses").textContent = `Average Guesses: ${averageGuesses}`;
+}
+
+// Restart button functionality
+document.getElementById("restart-game").addEventListener("click", () => {
+    currentRow = 0;
+    gameBoard.innerHTML = ""; // Clear the board
+    for (let i = 0; i < maxAttempts * 5; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        gameBoard.appendChild(cell);
+    }
+
+    answer = words[Math.floor(Math.random() * words.length)];
+    console.log("New Answer:", answer); // For debugging
+    document.getElementById("restart-game").style.display = "none";
+    document.getElementById("used-letters").innerHTML = ""; // Clear used letters board
+    usedLetters.clear();
+    document.getElementById("guess-input").focus();
+});
