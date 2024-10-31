@@ -3,6 +3,7 @@ let answer = "";
 let currentRow = 0;
 const maxAttempts = 6;
 const usedLetters = new Set();
+let gameOver = false;
 
 // Fetch words from proj2.json
 fetch('proj2.json')
@@ -24,6 +25,8 @@ for (let i = 0; i < maxAttempts * 5; i++) {
 
 // Handle guess submission
 document.getElementById("submit-guess").addEventListener("click", () => {
+    if (gameOver) return;  // Stop processing if the game is over
+    
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
     guessInput.value = ""; // Clear input immediately after submission
@@ -78,10 +81,12 @@ function checkGuess(guess) {
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
         updateAverageGuesses();
+        gameOver = true;
         document.getElementById("restart-game").style.display = "block";
     } else if (currentRow === maxAttempts - 1) {
         alert(`Game over! The word was ${answer}`);
         updateAverageGuesses();
+        gameOver = true;
         document.getElementById("restart-game").style.display = "block";
     }
 
@@ -115,6 +120,7 @@ function updateAverageGuesses() {
 // Restart button functionality
 document.getElementById("restart-game").addEventListener("click", () => {
     currentRow = 0;
+    gameOver = false;
     gameBoard.innerHTML = ""; // Clear the board
     for (let i = 0; i < maxAttempts * 5; i++) {
         const cell = document.createElement("div");
@@ -128,4 +134,8 @@ document.getElementById("restart-game").addEventListener("click", () => {
     document.getElementById("used-letters").innerHTML = ""; // Clear used letters board
     usedLetters.clear();
     document.getElementById("guess-input").focus();
+    
+    // Reset input and clear previous game-related data
+    document.getElementById("average-guesses").textContent = "Average Guesses: 0";
+    document.getElementById("guess-input").value = "";
 });
