@@ -41,7 +41,8 @@ document.getElementById("submit-guess").addEventListener("click", () => {
     verifyWordWithAPI(guess);
 });
 
-function verifyWordWithAPI(word) {
+// Verify the word through an external API
+const verifyWordWithAPI = (word) => {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
@@ -54,24 +55,19 @@ function verifyWordWithAPI(word) {
             console.error("Error verifying word:", error);
             alert("Error connecting to dictionary. Please try again.");
         });
-}
+};
 
+// Check the guessed word and apply coloring logic
 function checkGuess(guess) {
     const guessArray = guess.split("");
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
-    // First, clear existing colors and ensure black font
-    for (let i = 0; i < 5; i++) {
-        const cell = gameBoard.children[rowStart + i];
-        cell.className = 'cell'; // Reset class to only 'cell' before applying new styles
-        cell.style.color = "black"; // Make font color black
-        cell.textContent = guessArray[i];  // Display each letter in its respective cell
-    }
-
-    // Apply colors for correct and misplaced letters using arrow function
     guessArray.forEach((letter, index) => {
         const cell = gameBoard.children[rowStart + index];
+        cell.className = 'cell';
+        cell.style.color = "black";
+        cell.textContent = letter;
 
         if (letter === answerArray[index]) {
             cell.classList.add("correct");
@@ -100,6 +96,7 @@ function checkGuess(guess) {
     currentRow++;
 }
 
+// Update used letters board with an arrow function
 const updateUsedLetters = (letter, status) => {
     if (!usedLetters.has(letter)) {
         const usedLetterDiv = document.createElement("div");
@@ -110,6 +107,7 @@ const updateUsedLetters = (letter, status) => {
     }
 };
 
+// Calculate and display average guesses from localStorage data
 function updateAverageGuesses() {
     let totalGames = parseInt(localStorage.getItem("totalGames") || "0");
     let totalGuesses = parseInt(localStorage.getItem("totalGuesses") || "0");
@@ -132,7 +130,7 @@ document.getElementById("restart-game").addEventListener("click", () => {
     for (let i = 0; i < maxAttempts * 5; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
-        cell.style.color = "black"; // Set font color to black on reset
+        cell.style.color = "black";
         gameBoard.appendChild(cell);
     }
 
