@@ -11,7 +11,7 @@ fetch('proj2.json')
     .then(data => {
         words = data.words;
         answer = words[Math.floor(Math.random() * words.length)];
-        console.log("Answer:", answer); // For debugging
+        console.log("Answer:", answer); // Debugging line
     })
     .catch(error => console.error("Error loading words:", error));
 
@@ -26,7 +26,7 @@ for (let i = 0; i < maxAttempts * 5; i++) {
 // Handle guess submission
 document.getElementById("submit-guess").addEventListener("click", () => {
     if (gameOver) return;  // Stop processing if the game is over
-    
+
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
     guessInput.value = ""; // Clear input immediately after submission
@@ -46,7 +46,7 @@ function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // If valid, proceed with guess check
+                checkGuess(word); // Proceed with guess check if the word is valid
             } else {
                 alert("Invalid word! Please try another word.");
             }
@@ -62,7 +62,7 @@ function checkGuess(guess) {
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
-    // Initialize arrays to mark used letters for yellow color logic
+    // Initialize arrays to mark used letters for yellow cell logic
     let answerUsed = Array(answerArray.length).fill(false);
     let guessUsed = Array(guessArray.length).fill(false);
 
@@ -105,6 +105,7 @@ function checkGuess(guess) {
         }
     });
 
+    // Check game state after guess
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
         updateAverageGuesses();
@@ -119,7 +120,6 @@ function checkGuess(guess) {
 
     currentRow++;
 }
-
 
 function updateUsedLetters(letter, status) {
     if (!usedLetters.has(letter)) {
@@ -157,13 +157,10 @@ document.getElementById("restart-game").addEventListener("click", () => {
     }
 
     answer = words[Math.floor(Math.random() * words.length)];
-    console.log("New Answer:", answer); // For debugging
+    console.log("New Answer:", answer); // Debugging line
     document.getElementById("restart-game").style.display = "none";
     document.getElementById("used-letters").innerHTML = ""; // Clear used letters board
     usedLetters.clear();
     document.getElementById("guess-input").focus();
-    
-    // Reset input and clear previous game-related data
-    document.getElementById("average-guesses").textContent = "Average Guesses: 0";
-    document.getElementById("guess-input").value = "";
+    document.getElementById("average-guesses").textContent = "Average Guesses: N/A";
 });
