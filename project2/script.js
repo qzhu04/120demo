@@ -69,7 +69,7 @@ function checkGuess(guess) {
         cell.textContent = guessArray[i];  // Display each letter in its respective cell
     }
 
-    // Apply colors for correct and misplaced letters
+    // Apply colors for correct and misplaced letters using arrow function
     guessArray.forEach((letter, index) => {
         const cell = gameBoard.children[rowStart + index];
 
@@ -100,7 +100,7 @@ function checkGuess(guess) {
     currentRow++;
 }
 
-function updateUsedLetters(letter, status) {
+const updateUsedLetters = (letter, status) => {
     if (!usedLetters.has(letter)) {
         const usedLetterDiv = document.createElement("div");
         usedLetterDiv.textContent = letter;
@@ -108,7 +108,7 @@ function updateUsedLetters(letter, status) {
         document.getElementById("used-letters").appendChild(usedLetterDiv);
         usedLetters.add(letter);
     }
-}
+};
 
 function updateAverageGuesses() {
     let totalGames = parseInt(localStorage.getItem("totalGames") || "0");
