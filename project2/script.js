@@ -11,7 +11,7 @@ fetch('proj2.json')
     .then(data => {
         words = data.words;
         answer = words[Math.floor(Math.random() * words.length)];
-        console.log("Answer:", answer); // Debugging line
+        console.log("Answer:", answer); // For debugging
     })
     .catch(error => console.error("Error loading words:", error));
 
@@ -25,20 +25,18 @@ for (let i = 0; i < maxAttempts * 5; i++) {
 
 // Handle guess submission
 document.getElementById("submit-guess").addEventListener("click", () => {
-    if (gameOver) return;  // Stop processing if the game is over
+    if (gameOver) return;
 
     const guessInput = document.getElementById("guess-input");
     const guess = guessInput.value.toLowerCase();
-    guessInput.value = ""; // Clear input immediately after submission
+    guessInput.value = ""; 
 
-    // Check if the input is valid
     if (guess.length !== 5 || !words.includes(guess)) {
         alert("Please enter a valid 5-letter word.");
         guessInput.focus();
         return;
     }
 
-    // Verify word with the dictionary API
     verifyWordWithAPI(guess);
 });
 
@@ -46,7 +44,7 @@ function verifyWordWithAPI(word) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             if (response.ok) {
-                checkGuess(word); // Proceed with guess check if the word is valid
+                checkGuess(word);
             } else {
                 alert("Invalid word! Please try another word.");
             }
@@ -62,60 +60,39 @@ function checkGuess(guess) {
     const answerArray = answer.split("");
     const rowStart = currentRow * 5;
 
-    // Initialize arrays to mark used letters for yellow cell logic
-    let answerUsed = Array(answerArray.length).fill(false);
-    let guessUsed = Array(guessArray.length).fill(false);
+    // First, clear existing colors to avoid layering issues
+    for (let i = 0; i < 5; i++) {
+        const cell = gameBoard.children[rowStart + i];
+        cell.className = 'cell';  // Reset class to only 'cell' before applying new styles
+        cell.textContent = guessArray[i];  // Display each letter in its respective cell
+    }
 
-    // First pass: Check for exact matches
+    // Apply colors for correct and misplaced letters
     guessArray.forEach((letter, index) => {
         const cell = gameBoard.children[rowStart + index];
-        cell.textContent = letter;
 
         if (letter === answerArray[index]) {
             cell.classList.add("correct");
             updateUsedLetters(letter, "correct");
-            guessUsed[index] = true;
-            answerUsed[index] = true;
+        } else if (answerArray.includes(letter)) {
+            cell.classList.add("wrong-place");
+            updateUsedLetters(letter, "wrong-place");
+        } else {
+            cell.classList.add("not-in-word");
+            updateUsedLetters(letter, "not-in-word");
         }
     });
 
-    // Second pass: Check for wrong-place letters
-    guessArray.forEach((letter, index) => {
-        if (!guessUsed[index]) {
-            const cell = gameBoard.children[rowStart + index];
-
-            if (answerArray.includes(letter)) {
-                // Find a position where the letter is unused in the answer
-                const answerIndex = answerArray.findIndex(
-                    (ansLetter, ansIndex) => ansLetter === letter && !answerUsed[ansIndex]
-                );
-                
-                if (answerIndex !== -1) {
-                    cell.classList.add("wrong-place");
-                    updateUsedLetters(letter, "wrong-place");
-                    answerUsed[answerIndex] = true;
-                } else {
-                    cell.classList.add("not-in-word");
-                    updateUsedLetters(letter, "not-in-word");
-                }
-            } else {
-                cell.classList.add("not-in-word");
-                updateUsedLetters(letter, "not-in-word");
-            }
-        }
-    });
-
-    // Check game state after guess
     if (guess === answer) {
         alert("Congratulations! You've guessed the word!");
         updateAverageGuesses();
-        gameOver = true;
         document.getElementById("restart-game").style.display = "block";
+        gameOver = true;
     } else if (currentRow === maxAttempts - 1) {
         alert(`Game over! The word was ${answer}`);
         updateAverageGuesses();
-        gameOver = true;
         document.getElementById("restart-game").style.display = "block";
+        gameOver = true;
     }
 
     currentRow++;
@@ -149,7 +126,7 @@ function updateAverageGuesses() {
 document.getElementById("restart-game").addEventListener("click", () => {
     currentRow = 0;
     gameOver = false;
-    gameBoard.innerHTML = ""; // Clear the board
+    gameBoard.innerHTML = ""; 
     for (let i = 0; i < maxAttempts * 5; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
@@ -157,10 +134,9 @@ document.getElementById("restart-game").addEventListener("click", () => {
     }
 
     answer = words[Math.floor(Math.random() * words.length)];
-    console.log("New Answer:", answer); // Debugging line
+    console.log("New Answer:", answer);
     document.getElementById("restart-game").style.display = "none";
-    document.getElementById("used-letters").innerHTML = ""; // Clear used letters board
+    document.getElementById("used-letters").innerHTML = "";
     usedLetters.clear();
     document.getElementById("guess-input").focus();
-    document.getElementById("average-guesses").textContent = "Average Guesses: N/A";
 });
