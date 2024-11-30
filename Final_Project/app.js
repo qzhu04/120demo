@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyB9A9V51HpMulQfyx0yJ3FP-yRQi94UoCQ"; 
+const API_KEY = "AIzaSyA6BUTbZeZ-5Pd9jqSL16sZQHex32WBU2g"; 
 const API_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=music&type=video&key=${API_KEY}`;
 
 fetch(API_URL)
